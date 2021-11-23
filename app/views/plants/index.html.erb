@@ -1,5 +1,4 @@
-<h1>All plants</h1>
-
+<h1><%= pluralize @plants.count, 'plant' %> match your criteria</h1>
 
 <div class="row">
   <% @plants.each do |plant| %>
