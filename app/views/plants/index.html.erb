@@ -1,0 +1,10 @@
+<h1>All plants</h1>
+
+
+<div class="row">
+  <% @plants.each do |plant| %>
+    <div class="col-12 col-md-4">
+      <%= render 'plant_card', plant: plant %>
+    </div>
+  <% end %>
+</div>

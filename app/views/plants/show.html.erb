@@ -1,0 +1,12 @@
+<h1><%= @plant.name %></h1>
+
+<ul>
+  <li>Category: <%= @plant.category %></li>
+  <li>Description: <%= @plant.description %></li>
+  <li>Price: $<%= @plant.price %></li>
+  <li>Light level: <%= @plant.light_level %></li>
+  <li>Care level: <%= @plant.care_level %></li>
+  <li>Toxic: <%= @plant.toxic %></li>
+</ul>
+
+<%= link_to "See all plants", plants_path %>
