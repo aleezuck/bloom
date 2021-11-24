@@ -10,7 +10,7 @@
 </ul>
 
 <div class="confirm">
-  <%= link_to 'Whishlist', new_plant_wishlist_item_path(@plant), class: 'btn btn-primary' %>
+  <%= link_to 'Whishlist',  plant_wishlist_items_path(@plant), method: :post, class: 'btn btn-primary' %>
 </div>
 
 <%= link_to "See all plants", plants_path %>

@@ -14,21 +14,18 @@ class WishlistItemsController < ApplicationController
   end
 
   def create
-    @whishlist = WishlistItem.new(wishlist_params)
-    @whishlist.visitor = current_user
+    @whishlist = WishlistItem.new
+    @whishlist.user = current_user
+    @plant = Plant.find(params[:plant_id])
     @whishlist.plant = @plant
     authorize(@whishlist)
 
-    if @whishlist.save
-      redirect_to my_whishlist_items_path
-    else
-      render :new
-    end
+    @whishlist.save
+    redirect_to my_wishlist_items_path
   end
 
-  private
-
-  def wishlist_params
-    params.require(:wishlist_item)
+  def my_wishlist_items
+    @my_wishlist_items = WishlistItem.where(user: current_user)
+    authorize(@my_wishlist_items)
   end
 end

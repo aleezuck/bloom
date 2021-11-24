@@ -12,4 +12,12 @@ class WishlistItemPolicy < ApplicationPolicy
   def new?
     true
   end
+
+  def create?
+    true
+  end
+
+  def my_wishlist_items?
+    true
+  end
 end
