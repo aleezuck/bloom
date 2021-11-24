@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_202052) do
+ActiveRecord::Schema.define(version: 2021_11_24_163115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "plant_photos", force: :cascade do |t|
+    t.string "url"
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_plant_photos_on_plant_id"
+  end
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
@@ -59,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_202052) do
     t.index ["user_id"], name: "index_wishlist_items_on_user_id"
   end
 
+  add_foreign_key "plant_photos", "plants"
   add_foreign_key "wishlist_items", "plants"
   add_foreign_key "wishlist_items", "users"
 end
