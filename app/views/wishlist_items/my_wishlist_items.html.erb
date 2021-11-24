@@ -9,7 +9,7 @@
           <div class="text row">
             <div class="card-body">
               <h2 class="card-title"><%= link_to item.plant.name, plant_path(item.plant) %></h2>
-              <p class="card-text"><strong>Toxic:</strong> <% item.plant.toxic %>   <strong>Light level:</strong> <%= item.plant.light_level %></p>
+              <p class="card-text"><strong>Toxic:</strong> <%= item.plant.toxic %>   <strong>Light level:</strong> <%= item.plant.light_level %></p>
               <p class="card-text"><strong>Price:</strong> <%= item.plant.price %>  <strong>Care level:</strong> <%= item.plant.care_level %></p>
             </div>
           </div>
