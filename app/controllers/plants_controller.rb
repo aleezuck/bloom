@@ -28,6 +28,11 @@ class PlantsController < ApplicationController
     if params[:pets] == "true"
       @plants = @plants.where(toxic: false)
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'plant_list.html', locals: { plants: @plants } }
+    end
   end
 
   def show
