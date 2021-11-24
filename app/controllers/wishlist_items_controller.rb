@@ -1,13 +1,4 @@
 class WishlistItemsController < ApplicationController
-  # def index
-  #   @wishlists = policy_scope(Wishlist_item)
-  # end
-
-  # def my_wishlist_items
-  #   @whishlist = WishlistItem.all
-  #   authorize(@whishlist)
-  # end
-
   def new
     @wishlist = WishlistItem.new
     authorize(@wishlist)

@@ -1,0 +1,42 @@
+
+.container_card {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  align-items: center;
+}
+
+.cont {
+  background-color: white;
+  border: none;
+  box-shadow: 10px 10px rgba($color: #000000, $alpha: 0.008);
+  width: 300px;
+  align-items: center;
+}
+
+.individual {
+  margin-left: 50px;
+  margin-right: 60px;
+  border: none;
+  align-items: center;
+}
+
+.plant_img {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: xx-large;
+}
+
+.card-body {
+  text-align: center;
+}
