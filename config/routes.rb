@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   get '/my_wishlist_items', to: 'wishlist_items#my_wishlist_items', as: :my_wishlist_items
+  get '/shops', to: 'shops#index', as: :shops
 end
