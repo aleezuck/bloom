@@ -2,44 +2,65 @@
 <p><%= link_to "See all the plants", plants_path, class: 'btn btn-success' %></p>
 
 <%= form_tag plants_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a specific plant"
-  %>
-  <%= text_field_tag :max_price,
-    params[:max_price],
-    class: "form-control",
-    placeholder: "Max $ you are willing to spend"
-  %>
+  <div class="form-group">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a specific plant"
+    %>
+  </div>
+  
+  <div class="form-group">
+    <%= text_field_tag :max_price,
+      params[:max_price],
+      class: "form-control",
+      placeholder: "Max $ you are willing to spend"
+    %>
+  </div>
 
-  <p>Do you have pets?</p>
-  <%= radio_button_tag(:pets, "true") %>
-  <%= label_tag(:pets_true, "Yes") %>
-  <%= radio_button_tag(:pets, "false") %>
-  <%= label_tag(:pets_false, "No") %>
+  <fieldset class="form-group">
+    <legend class="col-form-label">Do you have pets?</legend>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:pets, "true", false, class: "form-check-input") %>
+      <%= label_tag(:pets_true, "Yes", class: "form-check-label") %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:pets, "false", false, class: "form-check-input") %>
+      <%= label_tag(:pets_false, "No", class: "form-check-label") %>
+    </div>
+  </fieldset>
 
-  <br>
-  <br>
+  <fieldset class="form-group">
+    <legend class="col-form-label">Level of light</legend>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:light_level, "low", false, class: "form-check-input") %>
+      <%= label_tag(:light_level_low, "Low", class: "form-check-label") %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:light_level, "medium", false, class: "form-check-input") %>
+      <%= label_tag(:light_level_medium, "Medium", class: "form-check-label") %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:light_level, "high", false, class: "form-check-input") %>
+      <%= label_tag(:light_level_high, "High", class: "form-check-label") %>
+    </div>
+  </fieldset>
 
-  <p>Level of light</p>
-  <%= radio_button_tag(:light_level, "low") %>
-  <%= label_tag(:light_level_low, "Low") %>
-  <%= radio_button_tag(:light_level, "medium") %>
-  <%= label_tag(:light_level_medium, "Medium") %>
-  <%= radio_button_tag(:light_level, "high") %>
-  <%= label_tag(:light_level_high, "High") %>
-
-  <br>
-  <br>
-
-  <p>Level of care</p>
-  <%= radio_button_tag(:care_level, "low") %>
-  <%= label_tag(:care_level_low, "Low") %>
-  <%= radio_button_tag(:care_level, "medium") %>
-  <%= label_tag(:care_level_medium, "Medium") %>
-  <%= radio_button_tag(:care_level, "high") %>
-  <%= label_tag(:care_level_high, "High") %>
+  <fieldset class="form-group">
+    <legend class="col-form-label">Level of care</legend>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:care_level, "low", false, class: "form-check-input") %>
+      <%= label_tag(:care_level_low, "Low", class: "form-check-label") %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:care_level, "medium", false, class: "form-check-input") %>
+      <%= label_tag(:care_level_medium, "Medium", class: "form-check-label") %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= radio_button_tag(:care_level, "high", false, class: "form-check-input") %>
+      <%= label_tag(:care_level_high, "High", class: "form-check-label") %>
+    </div>
+  </fieldset>
 
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>

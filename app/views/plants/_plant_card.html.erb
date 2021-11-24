@@ -1,4 +1,10 @@
 <div>
   <h2><%= link_to plant.name, plant_path(plant) %></h2>
-  <%= plant.description %>
+  <ul>
+    <li>Price: $<%= plant.price %></li>
+    <li>Light level: <%= plant.light_level %></li>
+    <li>Care level: <%= plant.care_level %></li>
+    <li>Toxic: <%= plant.toxic %></li>
+  </ul>
+  <p><%= plant.description %></p>
 </div>
