@@ -1,0 +1,25 @@
+.card {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container_card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  // margin-left: 50px;
+  // margin-right: 60px;
+  // margin-top: 50px;
+}
+
+.individual {
+  margin-left: 50px;
+  margin-right: 60px;
+  // margin-top: 50px
+}
+
+.image {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
