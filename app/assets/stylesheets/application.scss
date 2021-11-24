@@ -12,7 +12,24 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  font-family: $body-font;
+}
+
 .container {
   width: 100%;
-  margin: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+h1, h2 {
+  font-family: $headers-font;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+h2 {
+  font-size: 40px;
 }
