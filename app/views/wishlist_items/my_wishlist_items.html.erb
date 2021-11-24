@@ -1,12 +1,20 @@
-
-<% @my_wishlist_items.each do |item| %>
-  <h2><%= item.plant.name %></h2>
-<ul>
-  <li><%= item.plant.category %></li>
-  <li><%= item.plant.toxic %></li>
-  <li><%= item.plant.light_level %></li>
-  <li><%= item.plant.price %></li>
-  <li><%= item.plant.care_level %></li>
-  <li><%= item.plant.description %></li>
-<ul>
-<% end %>
+<div class="container_card">
+  <div class="row">
+    <% @my_wishlist_items.each do |item| %>
+      <div class="col-4 pb-4">
+        <div class="cont card">
+          <div class="image">
+            <img src="https://media.glamour.com/photos/5ea89429e67f360008b064d8/master/w_1172,h_1412,c_limit/Pink%20Anthurium.png" alt="Plant" class="plant_img">
+          </div>
+          <div class="text row">
+            <div class="card-body">
+              <h2 class="card-title"><%= link_to item.plant.name, plant_path(item.plant) %></h2>
+              <p class="card-text"><strong>Toxic:</strong> <% item.plant.toxic %>   <strong>Light level:</strong> <%= item.plant.light_level %></p>
+              <p class="card-text"><strong>Price:</strong> <%= item.plant.price %>  <strong>Care level:</strong> <%= item.plant.care_level %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

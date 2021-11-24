@@ -1,3 +1,5 @@
+# Plant seeds
+
 puts "Seeding plants..."
 
 Plant.destroy_all
@@ -9,7 +11,7 @@ Plant.create!(
   toxic: false,
   light_level: 1,
   price: 30,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -19,7 +21,7 @@ Plant.create!(
   toxic: true,
   light_level: 1,
   price: 30,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -29,7 +31,7 @@ Plant.create!(
   toxic: true,
   light_level: 3,
   price: 40,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -39,7 +41,7 @@ Plant.create!(
   toxic: false,
   light_level: 2,
   price: 8,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -49,7 +51,7 @@ Plant.create!(
   toxic: false,
   light_level: 3,
   price: 60,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -59,7 +61,7 @@ Plant.create!(
   toxic: false,
   light_level: 3,
   price: 6,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -69,7 +71,7 @@ Plant.create!(
   toxic: false,
   light_level: 2,
   price: 20,
-  care_level: "high",
+  care_level: "high"
 )
 
 Plant.create!(
@@ -79,7 +81,7 @@ Plant.create!(
   toxic: false,
   light_level: 2,
   price: 15,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -89,7 +91,7 @@ Plant.create!(
   toxic: false,
   light_level: 2,
   price: 15,
-  care_level: "high",
+  care_level: "high"
 )
 
 Plant.create!(
@@ -99,7 +101,7 @@ Plant.create!(
   toxic: false,
   light_level: 3,
   price: 40,
-  care_level: "high",
+  care_level: "high"
 )
 
 Plant.create!(
@@ -109,7 +111,7 @@ Plant.create!(
   toxic: true,
   light_level: 3,
   price: 40,
-  care_level: "high",
+  care_level: "high"
 )
 
 Plant.create!(
@@ -119,7 +121,7 @@ Plant.create!(
   toxic: true,
   light_level: 3,
   price: 50,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -129,7 +131,7 @@ Plant.create!(
   toxic: true,
   light_level: 2,
   price: 15,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -139,7 +141,7 @@ Plant.create!(
   toxic: true,
   light_level: 1,
   price: 50,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -149,7 +151,7 @@ Plant.create!(
   toxic: true,
   light_level: 2,
   price: 35,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -159,7 +161,7 @@ Plant.create!(
   toxic: true,
   light_level: 2,
   price: 20,
-  care_level: "medium",
+  care_level: "medium"
 )
 
 Plant.create!(
@@ -169,7 +171,7 @@ Plant.create!(
   toxic: true,
   light_level: 1,
   price: 30,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -179,7 +181,7 @@ Plant.create!(
   toxic: true,
   light_level: 1,
   price: 30,
-  care_level: "low",
+  care_level: "low"
 )
 
 Plant.create!(
@@ -189,7 +191,31 @@ Plant.create!(
   toxic: false,
   light_level: 2,
   price: 30,
-  care_level: "low",
+  care_level: "low"
+)
+
+puts "Finished seed! :)"
+
+# Shop seeds
+
+puts "Seeding shops..."
+
+Shop.destroy_all
+
+Shop.create!(
+  name: "Fleuriste Binette et filles",
+  url: "https://www.marchandedefleurs.com/",
+  address: "7070 Av. Henri-Julien, Montréal, QC H2S 3S3, Canada",
+  phone_number: "+1 514 271-6789",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637790923/Bloom/Shops/Binette_p9q3iw.jpg"
+)
+
+Shop.create!(
+  name: "Miss Boon",
+  url: "https://missboon.ca/",
+  address: "8527 Rue Drolet, Montréal, QC H2P 2J1, Canada",
+  phone_number: "+1 514 922-1801",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637790920/Bloom/Shops/miss_boon_a6h73f.jpg"
 )
 
 puts "Finished seed! :)"
