@@ -1,4 +1,9 @@
-<h1>BLOOM</h1>
+<div id="home-container-top">
+  <h1>BLOOM</h1>
+  <h2>Find the perfect plant for your home</h2>
+  <%= link_to "Find my plant", class: "btn btn-primary" %>
+</div>
+<%= image_tag "home-page-plant1.png", alt: "Plant", id: "home-plant-1", width: 600 %>
 <p><%= link_to "See all the plants", plants_path, class: 'btn btn-success' %></p>
 
 <%= form_tag plants_path, method: :get do %>
