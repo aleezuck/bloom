@@ -1,7 +1,16 @@
-<% plants.each do |plant| %>
-  <div class="col-12 col-md-4">
-    <%= link_to plant_path(plant) do %>
-      <%= render 'plant_card', plant: plant %>
+<div data-plant-list-target="list">
+  <h1><%= pluralize @plants.count, 'plant' %> found</h1>
+
+  <div class="row">
+
+    <% plants.each do |plant| %>
+      <div class="col-12 col-md-4">
+        <%= link_to plant_path(plant) do %>
+          
+          <%= render 'plant_card.html', plant: plant %>
+
+        <% end %>
+      </div>
     <% end %>
   </div>
-<% end %>
+</div>
