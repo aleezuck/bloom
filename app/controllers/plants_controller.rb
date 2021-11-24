@@ -19,7 +19,10 @@ class PlantsController < ApplicationController
     end
 
     if params[:care_level].present?
-      @plants = @plants.where(care_level: params[:care_level])
+      case params[:care_level]
+      when "low" then @plants = @plants.where(care_level: "low")
+      when "medium" then @plants = @plants.where(care_level: ["low", "medium"])
+      end
     end
 
     if params[:pets] == "true"
