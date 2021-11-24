@@ -1,0 +1,12 @@
+
+<% @my_wishlist_items.each do |item| %>
+  <h2><%= item.plant.name %></h2>
+<ul>
+  <li><%= item.plant.category %></li>
+  <li><%= item.plant.toxic %></li>
+  <li><%= item.plant.light_level %></li>
+  <li><%= item.plant.price %></li>
+  <li><%= item.plant.care_level %></li>
+  <li><%= item.plant.description %></li>
+<ul>
+<% end %>

@@ -9,6 +9,10 @@
   <li>Toxic: <%= @plant.toxic %></li>
 </ul>
 
+<div class="confirm">
+  <%= link_to 'Whishlist',  plant_wishlist_items_path(@plant), method: :post, class: 'btn btn-primary' %>
+</div>
+
 <%= link_to "See all plants", plants_path %>
 
 <%# add link to shops %>
