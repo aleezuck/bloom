@@ -264,15 +264,79 @@ Shop.create!(
   url: "https://www.marchandedefleurs.com/",
   address: "7070 Av. Henri-Julien, Montréal, QC H2S 3S3, Canada",
   phone_number: "+1 514 271-6789",
-  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637790923/Bloom/Shops/Binette_p9q3iw.jpg"
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637868622/Bloom/Shops/Binette_oxdhe2.jpg"
+)
+
+Shop.create!(
+  name: "Pépinière de l'Ouest",
+  url: "https://westislandnursery.com/",
+  address: "4780 Boulevard Saint-Charles, Montréal, Québec H9J3N1, Canada",
+  phone_number: "+1 514 620 2615",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637876438/Bloom/Shops/pepiniere_ouest_faa9q9.jpg"
 )
 
 Shop.create!(
   name: "Miss Boon",
   url: "https://missboon.ca/",
-  address: "8527 Rue Drolet, Montréal, QC H2P 2J1, Canada",
+  address: "8527 Rue Drolet, Montréal, Québec H2P 1J6, Canada",
   phone_number: "+1 514 922-1801",
   picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637790920/Bloom/Shops/miss_boon_a6h73f.jpg"
+)
+
+Shop.create!(
+  name: "Fleuressence",
+  url: "https://fleuressence.ca/",
+  address: "5665 Av. de Monkland, Montréal, QC H4A 1E5, Canada",
+  phone_number: "+1 514 488 1500",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637873986/Bloom/Shops/fleuressence_wvzm2a.jpg"
+)
+
+Shop.create!(
+  name: "La Fleuraison",
+  url: "https://lafleuraison.ca/",
+  address: "1970 Rue Sainte-Catherine Ouest, Montréal, Québec H3H 1M4, Canada",
+  phone_number: "+1 514 937 5797",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637874445/Bloom/Shops/la_fleuraison_vz7rby.jpg"
+)
+
+Shop.create!(
+  name: "Venus Marché des plantes",
+  url: "https://venusfleurs.ca/",
+  address: "237 Avenue Du Mont-Royal Ouest, Montréal, Québec H2V 4E4, Canada",
+  phone_number: "+1 514 844 1602",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637874756/Bloom/Shops/venus_jhoj7w.jpg"
+)
+
+Shop.create!(
+  name: "Le Jardin de Mathilde",
+  url: "https://www.lejardindemathilde.ca/",
+  address: "4507 Avenue De Lorimier, Montréal, Québec H2H 2B6, Canada",
+  phone_number: "+1 514 379 1968",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637874987/Bloom/Shops/jardin_de_mathilde_lorimier_owjxif.jpg"
+)
+
+Shop.create!(
+  name: "Dragon Flowers",
+  url: "https://www.instagram.com/dragonflowershop/",
+  address: "159 Rue Bernard Ouest, Montréal, Québec H2T 2K2, Canada",
+  phone_number: "+1 514 559 0879",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637875215/Bloom/Shops/dragon_flowers_q8t3aj.jpg"
+)
+
+Shop.create!(
+  name: "Marché Milton Parc",
+  url: "https://m-miltonparc.com/",
+  address: "208 Rue Prince-Arthur Ouest, Montréal, Québec H2X 3R4, Canada",
+  phone_number: "+1 514 844 6070",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637875789/Bloom/Shops/marche_milton_parc_mevikw.png"
+)
+
+Shop.create!(
+  name: "Frank, centre du jardin",
+  url: "https://www.frankfleuriste.com/",
+  address: "2935 Avenue Haig, Montréal, Québec H1N 1Y4, Canada",
+  phone_number: "+1 514 254 9419",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637876128/Bloom/Shops/frank_iqxhcx.jpg"
 )
 
 puts "Finished seed! :)"

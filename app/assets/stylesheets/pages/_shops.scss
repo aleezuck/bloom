@@ -1,0 +1,48 @@
+.shop-page-header {
+  margin-bottom: 3rem;
+}
+.shop-card {
+  background-color: $white;
+  display: flex;
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  padding: 15px;
+  .shop-img {
+    min-width: 150px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.shop-content {
+  margin-top: 3rem;
+}
+
+.shop-card-text {
+  padding-left: 1.5rem;
+  h2 {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.shop-card-address {
+  display: flex;
+}
+
+.fa-phone-alt,
+.fa-map-marker-alt,
+.fa-hand-point-right {
+  margin-right: 1rem;
+  color: $pink;
+}
+
+#map {
+  margin-bottom: 30px;
+  max-height: 85vh;
+}
