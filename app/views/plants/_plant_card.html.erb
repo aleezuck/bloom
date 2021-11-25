@@ -1,7 +1,7 @@
       <div class="col-4 pb-5 px-5">
         <div class="cont card">
           <div class="image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi6tjr8ihFToiXvkanWwxC8hblZjU7OlLRqA&usqp=CAU" alt="Plant" class="plant_img" >
+            <%= cl_image_tag(item.plant_photos.first.url, width: 290, height: 160, crop: :fill, class: 'plant_img') %>
           </div>
             <div class="text row">
               <div class="card-body pt-2">
