@@ -1,0 +1,41 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.container-main {
+  padding-bottom: 30px;
+}
+
+.texter {
+  list-style-type: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.big_letter {
+  font-size: 30px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirm {
+  width: 150px;
+}

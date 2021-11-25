@@ -1,24 +1,43 @@
-<h1><%= @plant.name %></h1>
+<div class="container-main">
+  <div class="top">
+    <div>
+      <%= link_to 'Return to list',  plants_path, class: 'btn btn-primary' %>
+    </div>
+      <div class="title">
+        <h1><%= @plant.name %></h1>
+      </div>
 
-<% @plant.plant_photos.each do |photo| %>
-  <%= cl_image_tag(photo.url, width: 400, height: 300, crop: :fill) %>
-<% end %>
+      <div class="confirm">
+        <%= link_to plant_wishlist_items_path(@plant), method: :post do %>
+          <%= image_tag "https://cdn.icon-icons.com/icons2/2091/PNG/512/heart_icon_128499.png", alt: "Heart", height: '40px' %>
+        <% end %>
+      </div>
+    </div>
 
-<ul>
-  <li>Category: <%= @plant.category %></li>
-  <li>Description: <%= @plant.description %></li>
-  <li>Price: $<%= @plant.price %></li>
-  <li>Light level: <%= @plant.light_level %></li>
-  <li>Care level: <%= @plant.care_level %></li>
-  <li>Toxic: <%= @plant.toxic %></li>
-</ul>
+  <div class="main">
+    <% @plant.plant_photos.each do |photo| %>
+      <%= cl_image_tag(photo.url, width: 400, height: 450, crop: :fill) %>
+    <% end %>
 
-<div class="confirm">
-  <%= link_to 'Wishlist',  plant_wishlist_items_path(@plant), method: :post, class: 'btn btn-primary' %>
+    <div class="texter">
+      <ul>
+        <li><p><strong>Description:</strong> <%= @plant.description %></p></li>
+        <li><p><strong>Price: $</strong><%= @plant.price %></p></li>
+        <li><p><strong>Light level:</strong> <%= @plant.light_level %></p></li>
+        <li><p><strong>Care level:</strong> <%= @plant.care_level %></p></li>
+        <li><p><strong>Toxic:</strong> <%= @plant.toxic %></p></li>
+      </ul>
+    </div>
+  </div>
+
+  .
+  <div class="bottom">
+    <div>
+      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
+    </div>
+    <div>
+      <%= link_to 'Shops near me',  shops_path, class: 'btn btn-primary' %>
+    </div>
+
+    <%# <%= link_to 'Forum', forum_path class: 'btn btn-primary' %>
 </div>
-
-<%= link_to "See all plants", plants_path %>
-
-<%= link_to "Shops near me", shops_path %>
-<%# add link to forum %>
-<%# add link to add to wishlist %>
