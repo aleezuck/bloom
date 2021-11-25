@@ -1,18 +1,55 @@
-<div class="container_card">
-  <div class="row">
-      <div class="col-4 pb-4">
+      <div class="col-4 pb-5 px-5">
         <div class="cont card">
           <div class="image">
-            <img src="https://media.glamour.com/photos/5ea89429e67f360008b064d8/master/w_1172,h_1412,c_limit/Pink%20Anthurium.png" alt="Plant" class="plant_img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi6tjr8ihFToiXvkanWwxC8hblZjU7OlLRqA&usqp=CAU" alt="Plant" class="plant_img" >
           </div>
-          <div class="text row">
-            <div class="card-body">
-              <h2 class="card-title"><%= link_to plant.name, plant_path(plant) %></h2>
-              <p class="card-text"><strong>Toxic:</strong> <%= plant.toxic %>   <strong>Light level:</strong> <%= plant.light_level %></p>
-              <p class="card-text"><strong>Price:</strong> <%= plant.price %>  <strong>Care level:</strong> <%= plant.care_level %></p>
+            <div class="text row">
+              <div class="card-body pt-2">
+                <h2 class="card-title"><%= link_to item.name, plant_path(item) %></h2>
+                <div class="row">
+                  <div class="col-6">
+                    <p class="card-text">
+                      <% if item.light_level == "low" %>
+                        <i class="fas fa-sun"></i>
+                      <% elsif item.light_level == "medium"%>
+                        <i class="fas fa-sun"></i><i class="fas fa-sun"></i>
+                      <% else %>
+                      <i class="fas fa-sun"></i> <i class="fas fa-sun"></i> <i class="fas fa-sun"></i>
+                      <% end %>
+                    </p>
+
+                    <p class="card-text">
+                      <% if item.toxic == true %>
+                        <i class="fas fa-paw"></i><i class="fas fa-times"></i>
+                      <% else %>
+                        <i class="fas fa-paw"></i><i class="fas fa-check"></i>
+                      <% end %>
+                    </p>
+                  </div>
+
+                  <div class="col-6">
+                    <p class="card-text">
+                      <% if (1..10).include? item.price %>
+                        <i class="fas fa-dollar-sign"></i>
+                      <% elsif (11..30).include? item.price%>
+                        <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+                      <% else %>
+                        <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+                      <% end %>
+                    </p>
+
+                    <p class="card-text">
+                      <% if item.care_level == "low" %>
+                        <i class="fas fa-seedling"></i>
+                      <% elsif item.care_level == "medium"%>
+                        <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
+                      <% else %>
+                        <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
       </div>
-  </div>
-</div>
