@@ -207,7 +207,7 @@ Shop.create!(
   url: "https://www.marchandedefleurs.com/",
   address: "7070 Av. Henri-Julien, Montréal, QC H2S 3S3, Canada",
   phone_number: "+1 514 271-6789",
-  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637790923/Bloom/Shops/Binette_p9q3iw.jpg"
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637868622/Bloom/Shops/Binette_oxdhe2.jpg"
 )
 
 Shop.create!(
