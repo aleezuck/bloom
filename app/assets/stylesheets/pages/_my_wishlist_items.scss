@@ -1,7 +1,20 @@
+.header {
+  text-align: center;
+}
 
 .container_card {
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 50px;
+  align-items: center;
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-times {
+  color: red;
 }
 
 .text {
@@ -9,17 +22,9 @@
 }
 
 .cont {
-  background-color: white;
+  background-color: #FFFEFC;
   border: none;
-  box-shadow: 10px 10px rgba($color: #000000, $alpha: 0.008);
-  width: 300px;
-  align-items: center;
-}
-
-.individual {
-  margin-left: 50px;
-  margin-right: 60px;
-  border: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   align-items: center;
 }
 
@@ -29,14 +34,28 @@
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  width: 100%;
-  height: auto;
+  width: 290px;
+  height: 160px;
+  object-fit: cover;
 }
 
 .card-title {
   font-size: xx-large;
 }
 
-.card-body {
+.card-title {
   text-align: center;
+    a {
+    color: #0E2C17;
+    font-size: x-large;
+  }
+}
+
+
+p {
+  color: rgba(14, 44, 23, 0.7);
+}
+
+.card-text {
+  text-align: left;
 }

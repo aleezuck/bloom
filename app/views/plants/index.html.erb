@@ -1,3 +1,7 @@
+<div class="header">
+  <h1>Plants for you</h1>
+</div>
+
 <div data-controller="plant-list">
   <%= form_tag plants_path, method: :get, data: { plant_list_target: 'form' } do %>
     <div class="form-row">
@@ -12,7 +16,7 @@
           }
         %>
       </div>
-      
+
       <div class="form-group col-md-2">
         <%= text_field_tag :max_price,
           params[:max_price],
