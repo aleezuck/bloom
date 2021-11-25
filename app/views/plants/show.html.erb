@@ -1,5 +1,9 @@
 <h1><%= @plant.name %></h1>
 
+<% @plant.plant_photos.each do |photo| %>
+  <%= cl_image_tag(photo.url, width: 400, height: 300, crop: :fill) %>
+<% end %>
+
 <ul>
   <li>Category: <%= @plant.category %></li>
   <li>Description: <%= @plant.description %></li>
@@ -10,7 +14,7 @@
 </ul>
 
 <div class="confirm">
-  <%= link_to 'Whishlist',  plant_wishlist_items_path(@plant), method: :post, class: 'btn btn-primary' %>
+  <%= link_to 'Wishlist',  plant_wishlist_items_path(@plant), method: :post, class: 'btn btn-primary' %>
 </div>
 
 <%= link_to "See all plants", plants_path %>

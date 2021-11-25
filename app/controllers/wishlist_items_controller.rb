@@ -18,5 +18,6 @@ class WishlistItemsController < ApplicationController
   def my_wishlist_items
     @my_wishlist_items = WishlistItem.where(user: current_user)
     authorize(@my_wishlist_items)
+    @plant = Plant.where(user: current_user)
   end
 end
