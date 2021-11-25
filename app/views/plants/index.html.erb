@@ -4,7 +4,7 @@
 
 <div data-controller="plant-list">
   <%= form_tag plants_path, method: :get, data: { plant_list_target: 'form' } do %>
-    <div class="form-row">
+    <div class="form-row" data-controller="plant-form">
       <div class="form-group col-md-2">
         <%= text_field_tag :query,
           params[:query],
@@ -29,7 +29,7 @@
         %>
       </div>
 
-      <fieldset class="form-group col-md-2">
+      <fieldset class="form-group col-md-2 plant-form-container">
         <legend class="col-form-label">Children/pets?</legend>
         <div class="form-check form-check-inline">
           <%= radio_button_tag(:pets, "true", params[:pets] == "true", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
@@ -38,6 +38,9 @@
         <div class="form-check form-check-inline">
           <%= radio_button_tag(:pets, "false", params[:pets] == "false", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
           <%= label_tag(:pets_false, "No", class: "form-check-label") %>
+        </div>
+        <div class="plant-form-popup" data-plant-list-target="pets">
+          hello
         </div>
       </fieldset>
 
