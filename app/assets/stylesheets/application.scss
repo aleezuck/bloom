@@ -13,6 +13,10 @@
 @import "pages/index";
 @import "pages/my_wishlist_items";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $body-font;
   min-height: 100vh;
@@ -20,7 +24,7 @@ body {
   flex-direction: column;
 }
 
-.container {
+.main-container {
   flex-grow: 1;
 }
 
@@ -33,6 +37,7 @@ body {
 
 h1, h2 {
   font-family: $headers-font;
+  font-weight: 400;
 }
 
 h1 {
