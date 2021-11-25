@@ -1,17 +1,30 @@
-<h1>Shops near you</h1>
-<%= link_to "Return to plant", :back %>
-<div class="shop-cards">
-  <% @shops.each do |shop| %>
-    <div class="shop-card">
-      <%= cl_image_tag(shop.picture,
-      width: 400, height: 300, crop: :fill) %>
-      <div class="shop-card-text">
-        <h2><%= shop.name %></h2>
-        <p><%= shop.phone_number %></p>
-        <p><%= shop.address %></p>
-        <p><%= shop.url %></p>
-      </div>
-    </div>
-  <% end %>
+<div class="row">
+  <div class="col-12">
+    <h1>Shops near you</h1>
+    <%= link_to "Return to plant", :back, class: "btn" %>
+  </div>
 </div>
-<%# <div id="map"></div> %>
+<div class="row">
+  <div class="col-sm-12 col-md-12 col-lg-6 order-sm-2 order-lg-1">
+    <div class="shop-cards">
+      <% @shops.each do |shop| %>
+        <div class="shop-card">
+          <%= cl_image_tag(shop.picture,
+          width: 400, height: 300, crop: :fill) %>
+          <div class="shop-card-text">
+            <h2><%= shop.name %></h2>
+            <p><%= shop.phone_number %></p>
+            <p><%= shop.address %></p>
+            <p><%= shop.url %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-6 order-sm-1 order-lg-2">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: $body-font;
+  color: $green;
+  padding-bottom: 0;
+  background-color: $pink;
+}
+
+.row #map {
+  height: 100vh;
+  position: sticky;
+  top: 50px;
+}
