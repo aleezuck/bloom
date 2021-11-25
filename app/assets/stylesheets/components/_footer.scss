@@ -1,7 +1,25 @@
 .footer {
-  padding: 3rem 12rem;
+  padding: 1rem 4rem;
   background-color: $green;
   color: $pink;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  a:link, a:visited {
+    color: $pink;
+  }
+
+  #socials {
+    font-size: 24px;
+
+    a:link {
+      padding: 0 0.5rem;
+    }
+  }
 }

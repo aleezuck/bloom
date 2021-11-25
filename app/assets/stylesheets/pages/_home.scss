@@ -8,4 +8,21 @@
 #home-container-top {
   margin-top: 4rem;
   margin-left: 2rem;
+  min-height: 80vh;
+
+  h1 {
+    font-size: 72px;
+  }
+
+  h1, h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+#home-form {
+  margin: 4rem 0;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
