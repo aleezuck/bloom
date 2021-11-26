@@ -5,13 +5,65 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: $body-font;
-  color: $green;
-  padding-bottom: 0;
-  background-color: $pink;
+  padding: 0;
+  background-color: $white;
 }
 
 .row #map {
   height: 100vh;
   position: sticky;
   top: 50px;
+}
+
+#map {
+  margin-bottom: 30px;
+  max-height: 85vh;
+}
+
+.shop-popup {
+  width: 110px;
+  height: 120px;
+  color: $green;
+  border: none !important;
+  outline: none;
+  h2 {
+    font-size: 12px;
+  }
+}
+
+.shop-popup:focus-visible {
+  border: none !important;
+  outline: none;
+}
+
+// .shop-popup:focus:not(:focus-visible) { outline: none}
+
+.mapboxgl-control-container:focus-visible {
+  outline: none;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.mapboxgl-control-container {
+  outline: none;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.shop-popup:focus {
+  border: none !important;
+  outline: none;
+}
+
+
+.mapboxgl-control-container:focus {
+  outline: none;
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.mapboxgl-popup-content a,
+.mapboxgl-popup-content a:active,
+.mapboxgl-popup-content a:focus,
+.mapboxgl-popup-content a:focus-visible {
+  border: none !important;
+  outline: none;
+  outline: -webkit-focus-ring-color auto 0px;
 }
