@@ -1,55 +1,57 @@
-      <div class="col-4 pb-5 px-5">
-        <div class="cont card">
-          <div class="image">
-            <%= cl_image_tag(item.plant_photos.first.url, width: 290, height: 160, crop: :fill, class: 'plant_img') %>
-          </div>
-            <div class="text row">
-              <div class="card-body pt-2">
-                <h2 class="card-title"><%= link_to item.name, plant_path(item) %></h2>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="card-text">
-                      <% if item.light_level == "low" %>
-                        <i class="fas fa-sun"></i>
-                      <% elsif item.light_level == "medium"%>
-                        <i class="fas fa-sun"></i><i class="fas fa-sun"></i>
-                      <% else %>
-                      <i class="fas fa-sun"></i> <i class="fas fa-sun"></i> <i class="fas fa-sun"></i>
-                      <% end %>
-                    </p>
+<div class="col-4 pb-5 px-5 plant-card-container">
+  <%= link_to plant_path(item) do %>
+    <div class="cont card">
+      <div class="image">
+        <%= cl_image_tag(item.plant_photos.first.url, width: 290, height: 160, crop: :fill, class: 'plant_img') %>
+      </div>
+        <div class="text row">
+          <div class="card-body pt-2">
+            <h2 class="card-title"><%= item.name %></h2>
+            <div class="row">
+              <div class="col-6">
+                <p class="card-text">
+                  <% if item.light_level == "low" %>
+                    <i class="fas fa-sun"></i>
+                  <% elsif item.light_level == "medium"%>
+                    <i class="fas fa-sun"></i><i class="fas fa-sun"></i>
+                  <% else %>
+                  <i class="fas fa-sun"></i> <i class="fas fa-sun"></i> <i class="fas fa-sun"></i>
+                  <% end %>
+                </p>
 
-                    <p class="card-text">
-                      <% if item.toxic == true %>
-                        <i class="fas fa-paw"></i><i class="fas fa-times"></i>
-                      <% else %>
-                        <i class="fas fa-paw"></i><i class="fas fa-check"></i>
-                      <% end %>
-                    </p>
-                  </div>
+                <p class="card-text">
+                  <% if item.toxic == true %>
+                    <i class="fas fa-paw"></i><i class="fas fa-times"></i>
+                  <% else %>
+                    <i class="fas fa-paw"></i><i class="fas fa-check"></i>
+                  <% end %>
+                </p>
+              </div>
 
-                  <div class="col-6">
-                    <p class="card-text">
-                      <% if (1..10).include? item.price %>
-                        <i class="fas fa-dollar-sign"></i>
-                      <% elsif (11..30).include? item.price%>
-                        <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
-                      <% else %>
-                        <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
-                      <% end %>
-                    </p>
+              <div class="col-6">
+                <p class="card-text">
+                  <% if (1..10).include? item.price %>
+                    <i class="fas fa-dollar-sign"></i>
+                  <% elsif (11..30).include? item.price%>
+                    <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+                  <% else %>
+                    <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+                  <% end %>
+                </p>
 
-                    <p class="card-text">
-                      <% if item.care_level == "low" %>
-                        <i class="fas fa-seedling"></i>
-                      <% elsif item.care_level == "medium"%>
-                        <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
-                      <% else %>
-                        <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
-                      <% end %>
-                    </p>
-                  </div>
-                </div>
+                <p class="card-text">
+                  <% if item.care_level == "low" %>
+                    <i class="fas fa-seedling"></i>
+                  <% elsif item.care_level == "medium"%>
+                    <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
+                  <% else %>
+                    <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i> <i class="fas fa-seedling"></i>
+                  <% end %>
+                </p>
               </div>
             </div>
+          </div>
         </div>
-      </div>
+    </div>
+  <% end %>
+</div>
