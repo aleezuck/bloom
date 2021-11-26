@@ -1,17 +1,11 @@
 const linkShopToMap = () => {
-  const shopList = document.querySelector(".shop-card")
-  shopList.forEach(addEventListener("click", (event) => {
-  // Do something (callback)
-  console.log("hello");
-}));
+  document.querySelectorAll(".shop-card").forEach((shop) => {
+    shop.addEventListener("click", (event) => {
+      console.log("hello");
+    });
+  });
 }
 
+// add something to reset between each click so the previous popup window disappears
+
 export { linkShopToMap };
-
-
-
-
-// clearPets(event) {
-//     event.preventDefault();
-//     document.getElementsByName("pets").forEach(element => element.checked = false)
-//   }
