@@ -1,5 +1,3 @@
-
-
 const changeColor = () => {
   const color = document.querySelector(".far");
   if (color) {
