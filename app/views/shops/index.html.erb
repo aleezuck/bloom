@@ -1,21 +1,25 @@
 <div class="row">
   <div class="col-12">
-    <h1>Shops near you</h1>
-    <%= link_to "Return to plant", :back, class: "btn" %>
+    <h1 class="text-center shop-page-header">Shops near you</h1>
+    <%= link_to "Return to plant", :back, class: "btn btn-primary" %>
   </div>
 </div>
-<div class="row">
+<div class="row shop-content">
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-2 order-lg-1">
     <div class="shop-cards">
       <% @shops.each do |shop| %>
         <div class="shop-card">
-          <%= cl_image_tag(shop.picture,
-          width: 400, height: 300, crop: :fill) %>
+          <div class="shop-img" style="background-image: url('<%= cl_image_path(shop.picture
+            ) %>')">
+          </div>
           <div class="shop-card-text">
             <h2><%= shop.name %></h2>
-            <p><%= shop.phone_number %></p>
-            <p><%= shop.address %></p>
-            <p><%= shop.url %></p>
+            <p><i class="fas fa-phone-alt"></i><%= shop.phone_number %></p>
+            <div class="shop-card-address">
+              <p><i class="fas fa-map-marker-alt"></i></p>
+              <p><%= shop.address %></p>
+            </div>
+            <p class="text-center"><%= link_to "visit website", shop.url, target: "_blank", class: "btn btn-primary btn-small" %></p>
           </div>
         </div>
       <% end %>
