@@ -12,7 +12,6 @@ class WishlistItemsController < ApplicationController
     authorize(@whishlist)
 
     @whishlist.save
-    redirect_to my_wishlist_items_path
   end
 
   def my_wishlist_items
