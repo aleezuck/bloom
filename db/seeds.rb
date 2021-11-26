@@ -290,6 +290,45 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+plant = Plant.create!(
+  name: "Broadleaf Lady Palm",
+  description: "This hardy little plant is perfect for indoor growing and does well in the typical household environment. It has even been shown to make an active difference in removing hazards from indoor air.",
+  category: "leafy",
+  toxic: false,
+  light_level: 2,
+  price: 35,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962348/Bloom/Plants/KaraRileyLadyPalm-2-ca810cf96f4b46cbb2ff9ce2ba6a279a_coh8sd.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Peperomia",
+  description: "Native to South America, the Peperomia puteolata is a perennial plant species found covering forest grounds with its quick spreading nature. Although its growth habit is upright it's also slightly trailing in nature. Patterned leaves, rather than the non-showy flowers produced is their attractive feature.",
+  category: "leafy",
+  toxic: false,
+  light_level: 2,
+  price: 15,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962446/Bloom/Plants/272667-1600x1066-peperomia-plant-guide_z8s1vh.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Flamingo Flower Plant",
+  description: "The flamingo flower plant is a species from the Anthuirum genus that displays great looking waxed effect flowers which bloom with an orange curly spadix.",
+  category: "flowering",
+  toxic: false,
+  light_level: 2,
+  price: 10,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962691/Bloom/Plants/how-to-care-for-anthurium-flamingo-flower-16-734x491_dlsvh0.jpg")
+photo.plant = plant
+photo.save!
+
 puts "Finished seed! :)"
 
 # Shop seeds
