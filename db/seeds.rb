@@ -22,7 +22,7 @@ plant = Plant.create!(
   description: "Its unique heart shaped leaves make this plant stand out whilst its adaptability to various conditions enables growers to spend less time concerned about caring for it.",
   category: "leafy",
   toxic: true,
-  light_level: 1,
+  light_level: 2,
   price: 30,
   care_level: "low"
 )
@@ -248,6 +248,45 @@ plant = Plant.create!(
   care_level: "low"
 )
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637869191/Bloom/Plants/castironplantamz_bln4yj.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Christmas Cactus",
+  description: "The Christmas cactus is the ideal house plant if a grower likes to see flowers blooming from November - January.",
+  category: "cactus",
+  toxic: false,
+  light_level: 2,
+  price: 20,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637958596/Bloom/Plants/christmascactus_kynj8j.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Peace Lily",
+  description: "The peace lily plant is very popular and easy enough for most growers to care for and maintain, which is one of the reason's it has become so favored.",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 15,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637959025/Bloom/Plants/1566417254329_20190821-1566417255317-b9314f1d9f7a4668a466c5ffb1913a8f_xnugzb.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Bunny Ear Cactus",
+  description: "The polka dot cactus (other common name) is fairly easy to grow if a grower can provide enough bright light, no over-watering, provide it's winter resting period and average room temperatures. Simple!",
+  category: "cactus",
+  toxic: false,
+  light_level: 2,
+  price: 9,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637959220/Bloom/Plants/AdobeStock_100596658_2_suak63.jpg")
 photo.plant = plant
 photo.save!
 
