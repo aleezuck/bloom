@@ -9,7 +9,7 @@
 
       <div class="confirm">
         <%= link_to plant_wishlist_items_path(@plant), method: :post do %>
-          <%= image_tag "https://cdn.icon-icons.com/icons2/2091/PNG/512/heart_icon_128499.png", alt: "Heart", height: '40px' %>
+          <i class="far fa-heart fa-2x"></i>
         <% end %>
       </div>
     </div>
@@ -30,7 +30,6 @@
     </div>
   </div>
 
-  .
   <div class="bottom">
     <div>
       <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
@@ -40,4 +39,5 @@
     </div>
 
     <%# <%= link_to 'Forum', forum_path class: 'btn btn-primary' %>
+  </div>
 </div>
