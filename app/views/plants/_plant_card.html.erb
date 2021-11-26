@@ -9,7 +9,7 @@
             <h2 class="card-title"><%= item.name %></h2>
             <div class="row">
               <div class="col-6">
-                <p class="card-text">
+                <p class="card-text"> Light:
                   <% if item.light_level == "low" %>
                     <i class="fas fa-sun"></i>
                   <% elsif item.light_level == "medium"%>
@@ -19,7 +19,7 @@
                   <% end %>
                 </p>
 
-                <p class="card-text">
+                <p class="card-text"> Safe:
                   <% if item.toxic == true %>
                     <i class="fas fa-paw"></i><i class="fas fa-times"></i>
                   <% else %>
@@ -29,7 +29,7 @@
               </div>
 
               <div class="col-6">
-                <p class="card-text">
+                <p class="card-text"> Price:
                   <% if (1..10).include? item.price %>
                     <i class="fas fa-dollar-sign"></i>
                   <% elsif (11..30).include? item.price%>
@@ -39,7 +39,7 @@
                   <% end %>
                 </p>
 
-                <p class="card-text">
+                <p class="card-text"> Care:
                   <% if item.care_level == "low" %>
                     <i class="fas fa-seedling"></i>
                   <% elsif item.care_level == "medium"%>
