@@ -18,7 +18,7 @@ photo.plant = plant
 photo.save!
 
 plant = Plant.create!(
-  name: "Heart-leaf philodendron",
+  name: "Philodendron",
   description: "Its unique heart shaped leaves make this plant stand out whilst its adaptability to various conditions enables growers to spend less time concerned about caring for it.",
   category: "leafy",
   toxic: true,
