@@ -7,7 +7,7 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { shop: shop })
+        info_window: render_to_string(partial: "info_window", locals: { shop: shop }),
       }
     end
   end
