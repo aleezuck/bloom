@@ -16,11 +16,13 @@
     </div>
 
     <div>
-      <ul>
-        <% @posts.each do |post| %>
-          <li><%= post.content %></li>
-        <% end %>
-      </ul>
+      <% @posts.each do |post| %>
+        <div class="plant-post">
+          <p class="post-title"><small><strong><%= post.user.email %></strong></small></p>
+          <p class="post-content"><%= post.content %></p>
+          <p class="post-bottom"><i class="fas fa-thumbs-up"></i> <%= post.upvotes %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
