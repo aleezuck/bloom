@@ -2,7 +2,7 @@ class PlantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @plants = policy_scope(Plant)
+    @plants = policy_scope(Plant).includes(:plant_photos)
 
     if params[:query].present?
       @plants = @plants.where("name ILIKE ?", "%#{params[:query]}%")
