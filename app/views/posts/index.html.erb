@@ -3,9 +3,13 @@
     <h1><%= @plant.name %></h1>
   </div>
 
-  <div class="plant_post_grid">
+  <div class="plant-post-grid">
     <div>
       <%= cl_image_tag(@plant.plant_photos.first.url, width: 400, height: 450, crop: :fill) %>
+      <%= simple_form_for([@plant, @post], html: { class: 'post-form' } ) do |f| %>
+        <%= f.input :content, label: false, placeholder: 'Post a comment' %>
+        <%= f.submit class: 'btn btn-primary btn-small' %>
+      <% end %>
       <div>
         <%= link_to "Back to plant", plant_path(@plant), class: 'btn btn-primary' %>
       </div>
