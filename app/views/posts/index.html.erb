@@ -1,0 +1,22 @@
+<div class="container-main">
+  <div class="title">
+    <h1><%= @plant.name %></h1>
+  </div>
+
+  <div class="plant_post_grid">
+    <div>
+      <%= cl_image_tag(@plant.plant_photos.first.url, width: 400, height: 450, crop: :fill) %>
+      <div>
+        <%= link_to "Back to plant", plant_path(@plant), class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+    <div>
+      <ul>
+        <% @posts.each do |post| %>
+          <li><%= post.content %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

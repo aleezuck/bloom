@@ -1,0 +1,10 @@
+.plant_post_grid {
+  display: grid;
+  grid-template-columns: max-content auto;
+  padding-top: 20px;
+  grid-gap: 20px;
+
+  img {
+    object-fit: cover;
+  }
+}
