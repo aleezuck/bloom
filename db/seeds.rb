@@ -401,6 +401,162 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+plant = Plant.create!(
+  name: "Devils Ivy",
+  description: "Pothos (also called Devil’s Ivy) is a tropical vine plant that has adapted well as a hardy houseplant. It has shiny, heart-shaped leaves and comes in a number of natural and cultivated varieties to add interesting foliage to your home.",
+  category: "flowering",
+  toxic: true,
+  light_level: 1,
+  price: 20,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638218251/Bloom/Plants/IMG_1848_1024x1024_2x_e9lxd6.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Strelitzia nicolai",
+  description: "Strelitzia nicolai boasts a stunning display of large tropical leaves that in the wilds of southern Africa can reach up to 20' tall! In human spaces, they're more likely to stand anywhere from 3’- 8’ tall, but still rank among most houseplant fans' favorites due to the remarkable size of their rich foliage.",
+  category: "flowering",
+  toxic: true,
+  light_level: 3,
+  price: 60,
+  care_level: "High"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638218532/Bloom/Plants/image_kwffyd.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Variegated syngonium",
+  description: "If you are seeking a houseplant that grows quickly and is very easy to care for, you can’t go wrong with Syngonium podophyllum. These plants make good gifts, and they are the perfect choice for inexperienced gardeners. They do very well in most indoor settings, and can also do nicely as container plants on a protected porch or balcony.",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 30,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638219015/Bloom/Plants/kararileysyngoniumextra-2-af28966509c94000942ecc8f23fd3c2d_z7jagg.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Mistletoe cactus",
+  description: "An interesting cactus houseplant, mistletoe cactus is a modern indoor plant that has a unique form thanks to its trailing shape. A lush, full-grown plant, making it a fun addition to your indoor decor as well as a conversation piece. ",
+  category: "flowering",
+  toxic: false,
+  light_level: 1,
+  price: 20,
+  care_level: "Low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638219301/Bloom/Plants/2BW7NBH_c4c2lw.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Calathea Lancifolia",
+  description: "Calathea lancifolia is a perfect houseplant for pattern lovers who like to decorate wild. Its bright green, wavy leaves are striped with alternating ovals of dark green and accented by a rich purple underside.  ",
+  category: "flowering",
+  toxic: false,
+  light_level: 2,
+  price: 25,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638219737/Bloom/Plants/growing-rattlesnake-plants-5088292-3-c37f03dd6a0e491a91e837d28d06b1f2_xahvs2.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Zamioculcas z",
+  description: "ZZ with its wide, attractive, dark green leaves, boasts many favorable traits for offices and homes. ZZ plant tolerates neglect, is drought tolerant, and accepts low-light conditions without throwing a fit. Its waxy, smooth leaves reflect sunlight and brighten rooms.  ",
+  category: "flowering",
+  toxic: true,
+  light_level: 1,
+  price: 30,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638220119/Bloom/Plants/il_fullxfull.2247112923_dhhs_hwlh38.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Polyscias Fruticosa",
+  description: "Native to the tropics of India and Polynesia, Ming aralia is an interesting and exotic houseplant that is technically an evergreen shrub. While it is a bit more temperamental to grow than your average plant, it's well worth the effort for its fluffy, bright green foliage.  ",
+  category: "flowering",
+  toxic: true,
+  light_level: 3,
+  price: 80,
+  care_level: "High"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638220630/Bloom/Plants/grow-polyscias-fruticosa-1902765-3-d30bf1def0cb44679913d3ea3d4e2895_yokvlm.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Parlour Palm",
+  description: "The parlor palm is one of the most popular indoor palms grown in most temperate countries, favored because it adapts to relatively low light and handles lower temperatures. Among all the palm trees, parlor palms are a great place to start for the beginner.  ",
+  category: "flowering",
+  toxic: false,
+  light_level: 2,
+  price: 30,
+  care_level: "Low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638220889/Bloom/Plants/how-to-care-for-a-parlor-palm-chamaedorea-elegans-12-734x506_jue1x7.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Elephant Ear",
+  description: "Elephant ear plants bring to mind lush, tropical forests, adding drama to both gardens and containers. The most recognized forms have heart- or arrow-shaped leaves (often oversized) with decorative veining, inspiring the common name elephant ears. ",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 45,
+  care_level: "Low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638221074/Bloom/Plants/Elephant-Ears-1_medium_o6aqcm.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Licuala Grandis",
+  description: "The Licuala Grandis is a slow growing, and surprisingly very hardy tropical plant, native to the Vanuatu Islands right off the coast of Australia. Its distinct, fan-shaped leaves should be handled carefully, as the edges are sharp. ",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 100,
+  care_level: "High"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638223125/Bloom/Plants/Ruffled-Fan-Palm_dwbwsk.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Fishbone cactus",
+  description: "The Fishbone Cactus, also known as Epiphyllum anguliger, is generally a low-maintenance plant, which makes it perfect for plant enthusiasts with a black thumb. We have mentioned that the blooms of the Fishbone Cactus are a thing to behold.  ",
+  category: "flowering",
+  toxic: false,
+  light_level: 3,
+  price: 20,
+  care_level: "Low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638222028/Bloom/Plants/e9_if7qeh.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Neon pothos",
+  description: "Neon Pothos (pronounced poe-thaws) is a common houseplant known for its hardiness and stunning leaf color. Pothos (Epipremnum aureum) comes from French Polynesia. It thrives on islands such as Tahiti and Moorea.  ",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 20,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638222848/Bloom/Plants/Planta-Potos-Neon-Gu_C3_ADa-de-cuidados_lbganx.jpg")
+photo.plant = plant
+photo.save!
+
 puts "Finished seed! :)"
 
 # Shop seeds
