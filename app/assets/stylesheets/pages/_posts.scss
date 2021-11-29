@@ -22,4 +22,13 @@
 
 .plant-post {
   margin-bottom: 50px;
+  display: flex;
+
+  .post-body {
+    margin-left: 20px;
+  }
+
+  a:hover, a:active, .upvoted {
+    color: $bright-green;
+  }
 }

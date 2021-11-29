@@ -30,12 +30,14 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { changeColor } from '../components/wishlist';
+import { upvotePost } from '../components/posts';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   changeColor();
+  upvotePost();
 });
 
 import "controllers"

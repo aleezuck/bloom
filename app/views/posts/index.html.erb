@@ -18,14 +18,23 @@
     <div>
       <% @posts.each do |post| %>
         <div class="plant-post">
-          <p class="post-title"><small><strong><%= post.user.email %></strong></small></p>
-          <p class="post-content"><%= post.content %></p>
-          <p class="post-bottom">
-            <%= link_to upvote_post_path(post), method: :patch do %>
-              <i class="fas fa-thumbs-up"></i>
-            <% end %>
-            <%= post.upvotes %>
-          </p>
+          <% if post.user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "avatar-placeholder.png", class: "avatar" %>
+          <% end %>
+          <div class="post-body">
+            <p class="post-title"><small><strong><%= post.user.email %></strong></small></p>
+            <p class="post-content"><%= post.content %></p>
+            <p class="post-bottom">
+              <span class="upvote-post">
+                <%= link_to upvote_post_path(post), method: :patch do %>
+                  <i class="fas fa-thumbs-up"></i>
+                <% end %>
+                <span class="upvote-number"><%= post.upvotes %></span>
+              </span>
+            </p>
+          </div>
         </div>
       <% end %>
     </div>
