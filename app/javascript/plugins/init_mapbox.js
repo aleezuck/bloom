@@ -18,6 +18,25 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10',
     });
 
+    const linkShopToMap = () => {
+        document.querySelectorAll(".shop-card").forEach((shop) => {
+        shop.addEventListener("click", (event) => {
+          flyToStore(event.currentTarget);
+        });
+      });
+    }
+
+    const flyToStore = (currentFeature) => {
+      const lat = Number.parseFloat(currentFeature.dataset.lat, 10);
+      const long = Number.parseFloat(currentFeature.dataset.long, 10);
+      const newCoords = [long, lat]
+
+      map.flyTo({
+        center: newCoords,
+        zoom: 16
+      });
+    }
+
     map.addControl(new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
@@ -32,12 +51,16 @@ const initMapbox = () => {
         .addTo(map);
     });
 
+
     map.once('load', function () {
       map.resize()
     })
 
     fitMapToMarkers(map, markers);
+    linkShopToMap();
   }
 };
+
+
 
 export { initMapbox };
