@@ -1,0 +1,33 @@
+<div class="container-main">
+  <div class="title">
+    <h1><%= @plant.name %></h1>
+  </div>
+
+  <div class="plant-post-grid">
+    <div>
+      <%= cl_image_tag(@plant.plant_photos.first.url, width: 400, height: 450, crop: :fill) %>
+      <%= simple_form_for([@plant, @post], html: { class: 'post-form' } ) do |f| %>
+        <%= f.input :content, label: false, placeholder: 'Post a comment' %>
+        <%= f.submit class: 'btn btn-primary btn-small' %>
+      <% end %>
+      <div>
+        <%= link_to "Back to plant", plant_path(@plant), class: 'btn btn-primary' %>
+      </div>
+    </div>
+
+    <div>
+      <% @posts.each do |post| %>
+        <div class="plant-post">
+          <p class="post-title"><small><strong><%= post.user.email %></strong></small></p>
+          <p class="post-content"><%= post.content %></p>
+          <p class="post-bottom">
+            <%= link_to upvote_post_path(post), method: :patch do %>
+              <i class="fas fa-thumbs-up"></i>
+            <% end %>
+            <%= post.upvotes %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
