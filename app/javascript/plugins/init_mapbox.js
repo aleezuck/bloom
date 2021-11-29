@@ -19,7 +19,7 @@ const initMapbox = () => {
     });
 
     const linkShopToMap = () => {
-        document.querySelectorAll(".shop-card").forEach((shop) => {
+      document.querySelectorAll(".shop-card").forEach((shop) => {
         shop.addEventListener("click", (event) => {
           flyToStore(event.currentTarget);
         });
@@ -33,14 +33,9 @@ const initMapbox = () => {
 
       map.flyTo({
         center: newCoords,
-        zoom: 16
+        zoom: 15
       });
     }
-
-    map.addControl(new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    }));
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -51,6 +46,10 @@ const initMapbox = () => {
         .addTo(map);
     });
 
+    map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
 
     map.once('load', function () {
       map.resize()
