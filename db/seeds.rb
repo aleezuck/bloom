@@ -17,6 +17,14 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638202286/Bloom/Plants/spider_k7wgxp.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638202422/Bloom/Plants/1525271585588_nlzelc.jpg")
+photo2.plant = plant
+photo2.save!
+
 plant = Plant.create!(
   name: "Philodendron",
   description: "Its unique heart shaped leaves make this plant stand out whilst its adaptability to various conditions enables growers to spend less time concerned about caring for it.",
@@ -29,6 +37,14 @@ plant = Plant.create!(
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866745/Bloom/Plants/heart_leaf_philodendron_438_detail_vc511u.jpg")
 photo.plant = plant
 photo.save!
+
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638201868/Bloom/Plants/grow-philodendron-houseplants-1902768-04-8bee1496f67e41c392304329eaea505e_zc0jgm.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638202497/Bloom/Plants/image_ceia76.jpg")
+photo2.plant = plant
+photo2.save!
 
 plant = Plant.create!(
   name: "Monstera deliciosa",
@@ -43,6 +59,14 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204372/Bloom/Plants/brighter-blooms-house-plants-mon-swi3-c3_600_ykiycc.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638202671/Bloom/Plants/shutterstock_1825925102_1_hxdwfv.jpg")
+photo2.plant = plant
+photo2.save!
+
 plant = Plant.create!(
   name: "African violet",
   description: "The African violet is one of the most popular flowering house plants. These have become easier for the average home grower to produce perfect blooms, although they need to be provided with some special care and attention.",
@@ -55,6 +79,14 @@ plant = Plant.create!(
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866744/Bloom/Plants/1521228775791_muczia.jpg")
 photo.plant = plant
 photo.save!
+
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204465/Bloom/Plants/grow-african-violets-indoors-1902733-02-ae7c409a65ba4b949cb33518c37dd90e_z4vj9n.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638203800/Bloom/Plants/african-violets-1626724099_kyw94x.jpg")
+photo2.plant = plant
+photo2.save!
 
 plant = Plant.create!(
   name: "Lucky bamboo",
@@ -69,6 +101,14 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638203877/Bloom/Plants/meaning-of-lucky-bamboo-1902901-HERO-5eb69ab642b541398af05982ef1f17d9_okgbtk.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638203929/Bloom/Plants/dracaena-plant-lucky-bamboo-spiral__0908921_pe594507_s5_b6mycm.jpg")
+photo2.plant = plant
+photo2.save!
+
 plant = Plant.create!(
   name: "Basil",
   description: "Trim off flowers to keep those fragrant leaves coming.",
@@ -81,6 +121,14 @@ plant = Plant.create!(
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637868212/Bloom/Plants/basil-in-a-bowel-on-a-table_g3ryjk.jpg")
 photo.plant = plant
 photo.save!
+
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638203984/Bloom/Plants/how-to-grow-basil-plants-1402624-07-6071d2544ef2423a99d2e30a153c2b00_ta34p5.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204004/Bloom/Plants/diet-nutrition_cooking-cookware_cooking-with-spices-basil_1440x1080_000064287217-600x450_e7edf4.jpg")
+photo2.plant = plant
+photo2.save!
 
 plant = Plant.create!(
   name: "Boston Fern",
@@ -95,6 +143,14 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204624/Bloom/Plants/273562-1600x1066-boston-fern_xxypn4.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204647/Bloom/Plants/kararileybostonferns-7-0183dd5556834787aab1407cd7598560_hzc3wm.jpg")
+photo2.plant = plant
+photo2.save!
+
 plant = Plant.create!(
   name: "Orchid",
   description: "Glorious colored blooms all year round and the \"ease of growing\" is what makes these a popular house plant choice.",
@@ -108,6 +164,14 @@ photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v
 photo.plant = plant
 photo.save!
 
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204750/Bloom/Plants/shutterstock_1043401630_2000x_cicsas.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204778/Bloom/Plants/orchids-1590724_1920_g0vtai.jpg")
+photo2.plant = plant
+photo2.save!
+
 plant = Plant.create!(
   name: "Zebra Plant",
   description: "Being a tropical plant native to Brazil, the zebra plant does require a warm and moist environment which encourages the foliage to thrive and look its best.",
@@ -120,6 +184,14 @@ plant = Plant.create!(
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637868212/Bloom/Plants/FullSizeRender_xiq04x.jpg")
 photo.plant = plant
 photo.save!
+
+photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204850/Bloom/Plants/kararileyzebra-4-49cac0d8528c425fafbe1ab4792c991c_bmxklv.jpg")
+photo1.plant = plant
+photo1.save!
+
+photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204877/Bloom/Plants/6106_14_d5g7oa.jpg")
+photo2.plant = plant
+photo2.save!
 
 plant = Plant.create!(
   name: "Banana Plant",

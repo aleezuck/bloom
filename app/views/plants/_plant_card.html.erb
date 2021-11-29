@@ -2,14 +2,15 @@
   <%= link_to plant_path(item) do %>
     <div class="cont card">
       <div class="image">
-        <%= cl_image_tag(item.plant_photos.first.url, width: 290, height: 160, crop: :fill, class: 'plant_img') %>
+        <%= cl_image_tag(item.plant_photos.first.url, height: 160, width: 260, crop: :fill, class: 'plant_img') %>
       </div>
         <div class="text row">
           <div class="card-body pt-2">
             <h2 class="card-title"><%= item.name %></h2>
+            <hr>
             <div class="row">
               <div class="col-6">
-                <p class="card-text">
+                <p class="card-text">light:
                   <% if item.light_level == "low" %>
                     <i class="fas fa-sun"></i>
                   <% elsif item.light_level == "medium"%>
@@ -19,7 +20,7 @@
                   <% end %>
                 </p>
 
-                <p class="card-text">
+                <p class="card-text">safe?
                   <% if item.toxic == true %>
                     <i class="fas fa-paw"></i><i class="fas fa-times"></i>
                   <% else %>
@@ -29,7 +30,7 @@
               </div>
 
               <div class="col-6">
-                <p class="card-text">
+                <p class="card-text">price:
                   <% if (1..10).include? item.price %>
                     <i class="fas fa-dollar-sign"></i>
                   <% elsif (11..30).include? item.price%>
@@ -39,7 +40,7 @@
                   <% end %>
                 </p>
 
-                <p class="card-text">
+                <p class="card-text">care:
                   <% if item.care_level == "low" %>
                     <i class="fas fa-seedling"></i>
                   <% elsif item.care_level == "medium"%>
