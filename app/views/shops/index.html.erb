@@ -6,9 +6,9 @@
 </div>
 <div class="row shop-content">
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-2 order-lg-1">
-    <div class="shop-cards">
+    <div id="shop-cards">
       <% @shops.each do |shop| %>
-        <div class="shop-card">
+        <div class="shop-card" data-lat="<%= shop.latitude %>" data-long="<%= shop.longitude %>">
           <div class="shop-img" style="background-image: url('<%= cl_image_path(shop.picture
             ) %>')">
           </div>
