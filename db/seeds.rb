@@ -30,7 +30,7 @@ plant = Plant.create!(
   description: "Its unique heart shaped leaves make this plant stand out whilst its adaptability to various conditions enables growers to spend less time concerned about caring for it.",
   category: "leafy",
   toxic: true,
-  light_level: 1,
+  light_level: 2,
   price: 30,
   care_level: "low"
 )
@@ -320,6 +320,84 @@ plant = Plant.create!(
   care_level: "low"
 )
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637869191/Bloom/Plants/castironplantamz_bln4yj.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Christmas Cactus",
+  description: "The Christmas cactus is the ideal house plant if a grower likes to see flowers blooming from November - January.",
+  category: "cactus",
+  toxic: false,
+  light_level: 2,
+  price: 20,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637958596/Bloom/Plants/christmascactus_kynj8j.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Peace Lily",
+  description: "The peace lily plant is very popular and easy enough for most growers to care for and maintain, which is one of the reason's it has become so favored.",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 15,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637959025/Bloom/Plants/1566417254329_20190821-1566417255317-b9314f1d9f7a4668a466c5ffb1913a8f_xnugzb.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Bunny Ear Cactus",
+  description: "The polka dot cactus (other common name) is fairly easy to grow if a grower can provide enough bright light, no over-watering, provide it's winter resting period and average room temperatures. Simple!",
+  category: "cactus",
+  toxic: false,
+  light_level: 2,
+  price: 9,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637959220/Bloom/Plants/AdobeStock_100596658_2_suak63.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Broadleaf Lady Palm",
+  description: "This hardy little plant is perfect for indoor growing and does well in the typical household environment. It has even been shown to make an active difference in removing hazards from indoor air.",
+  category: "leafy",
+  toxic: false,
+  light_level: 2,
+  price: 35,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962348/Bloom/Plants/KaraRileyLadyPalm-2-ca810cf96f4b46cbb2ff9ce2ba6a279a_coh8sd.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Peperomia",
+  description: "Native to South America, the Peperomia puteolata is a perennial plant species found covering forest grounds with its quick spreading nature. Although its growth habit is upright it's also slightly trailing in nature. Patterned leaves, rather than the non-showy flowers produced is their attractive feature.",
+  category: "leafy",
+  toxic: false,
+  light_level: 2,
+  price: 15,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962446/Bloom/Plants/272667-1600x1066-peperomia-plant-guide_z8s1vh.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Flamingo Flower Plant",
+  description: "The flamingo flower plant is a species from the Anthuirum genus that displays great looking waxed effect flowers which bloom with an orange curly spadix.",
+  category: "flowering",
+  toxic: false,
+  light_level: 2,
+  price: 10,
+  care_level: "low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637962691/Bloom/Plants/how-to-care-for-anthurium-flamingo-flower-16-734x491_dlsvh0.jpg")
 photo.plant = plant
 photo.save!
 
