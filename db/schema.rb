@@ -56,6 +56,17 @@ ActiveRecord::Schema.define(version: 2021_11_29_193057) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.integer "upvotes", default: 0
+    t.bigint "plant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_posts_on_plant_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "shops", force: :cascade do |t|
     t.string "name"
     t.string "url"
@@ -92,6 +103,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_193057) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "plant_photos", "plants"
+  add_foreign_key "posts", "plants"
+  add_foreign_key "posts", "users"
   add_foreign_key "wishlist_items", "plants"
   add_foreign_key "wishlist_items", "users"
 end
