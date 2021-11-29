@@ -1,13 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_plant, only: [:index, :create]
+  before_action :set_plant, :set_posts, only: [:index, :create]
 
   def index
-    @posts = policy_scope(Post.where(plant: @plant))
     @post = Post.new
   end
 
   def create
-    @posts = policy_scope(Post.where(plant: @plant))
     @post = Post.new(post_params)
     @post.user = current_user
     @post.plant = @plant
@@ -20,6 +18,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    authorize(@post)
+    @post.upvotes += 1
+    @post.save
+  end
+
   private
 
   def post_params
@@ -28,5 +33,9 @@ class PostsController < ApplicationController
 
   def set_plant
     @plant = Plant.find(params[:plant_id])
+  end
+
+  def set_posts
+    @posts = policy_scope(Post.where(plant: @plant)).order(upvotes: :desc)
   end
 end

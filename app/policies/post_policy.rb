@@ -8,4 +8,8 @@ class PostPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def upvote?
+    true
+  end
 end

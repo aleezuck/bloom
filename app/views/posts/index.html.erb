@@ -20,7 +20,12 @@
         <div class="plant-post">
           <p class="post-title"><small><strong><%= post.user.email %></strong></small></p>
           <p class="post-content"><%= post.content %></p>
-          <p class="post-bottom"><i class="fas fa-thumbs-up"></i> <%= post.upvotes %></p>
+          <p class="post-bottom">
+            <%= link_to upvote_post_path(post), method: :patch do %>
+              <i class="fas fa-thumbs-up"></i>
+            <% end %>
+            <%= post.upvotes %>
+          </p>
         </div>
       <% end %>
     </div>
