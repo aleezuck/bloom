@@ -38,6 +38,10 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   changeColor();
   upvotePost();
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 });
 
 import "controllers"
