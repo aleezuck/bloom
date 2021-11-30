@@ -24,6 +24,42 @@
         </div>
       <% end %>
     </div>
+
+    <% if @result[:quantity] > 0 %>
+      <div id="shop-cards">
+          <div class="shop-card">
+          <div class="shop-img" style="background-image: url('https://images.dailyhive.com/20200728103330/DH-Plantsome.jpg')">
+            </div>
+            <div class="shop-card-text">
+              <h2>Plantsome</h2>
+              <p>This website has <%= @result[:quantity]%> results for this plant</p>
+              <div class="shop-card-address">
+                <p><i class="fas fa-map-marker-alt"></i></p>
+                <p>Can deliver anyware in the world. Headquarted in canada.</p>
+              </div>
+              <p class="text-center"><%= link_to "visit website",  @result[:url] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
+
+     <% if @result_patch[:quantity1] > 0 %>
+      <div id="shop-cards">
+          <div class="shop-card">
+          <div class="shop-img" style="background-image: url('https://res.cloudinary.com/patch-gardens/image/upload/c_fill,f_auto,h_840,q_auto:good,w_840/v1563876772/products/snake-plant-dda326.jpg')">
+            </div>
+            <div class="shop-card-text">
+              <h2>Patch Plants</h2>
+              <p>This website has <%= @result_patch[:quantity1]%> results for this plant</p>
+              <div class="shop-card-address">
+                <p><i class="fas fa-map-marker-alt"></i></p>
+                <p>Can deliver anyware in the world. Headquarted in England.</p>
+              </div>
+              <p class="text-center"><%= link_to "visit website",  @result_patch[:url1] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
   </div>
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-1 order-lg-2">
     <div id="map"

@@ -52,7 +52,7 @@
       <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
     </div>
     <div>
-      <%= link_to 'Shops near me',  shops_path, class: 'btn btn-primary' %>
+      <%= link_to 'Shops near me',  shops_path(plant_id: @plant), class: 'btn btn-primary' %>
     </div>
     <div>
       <%= link_to 'See forum', plant_posts_path(@plant), class: 'btn btn-primary' %>
