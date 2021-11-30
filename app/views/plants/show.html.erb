@@ -9,7 +9,7 @@
 
       <div class="confirm">
         <%= link_to toggle_wishlist_path(@plant), method: :post do %>
-          <i class="far fa-heart fa-2x"></i>
+          <i class="far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
         <% end %>
       </div>
     </div>
