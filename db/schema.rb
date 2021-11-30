@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_193057) do
+ActiveRecord::Schema.define(version: 2021_11_30_185952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +55,17 @@ ActiveRecord::Schema.define(version: 2021_11_29_193057) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "post_replies", force: :cascade do |t|
+    t.text "content"
+    t.integer "upvotes", default: 0
+    t.bigint "post_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_post_replies_on_post_id"
+    t.index ["user_id"], name: "index_post_replies_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -103,6 +115,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_193057) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "plant_photos", "plants"
+  add_foreign_key "post_replies", "posts"
+  add_foreign_key "post_replies", "users"
   add_foreign_key "posts", "plants"
   add_foreign_key "posts", "users"
   add_foreign_key "wishlist_items", "plants"
