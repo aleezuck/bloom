@@ -2,7 +2,7 @@
   <%= link_to plant_path(item) do %>
     <div class="cont card">
       <div class="image">
-        <%= cl_image_tag(item.plant_photos.first.url, height: 160, width: 260, crop: :fill, class: 'plant_img') %>
+        <%= image_tag(item.plant_photos.first.url, height: 160, width: 260, class: 'plant_img') %>
       </div>
         <div class="text row">
           <div class="card-body pt-2">
@@ -19,8 +19,8 @@
                   <i class="fas fa-sun"></i> <i class="fas fa-sun"></i> <i class="fas fa-sun"></i>
                   <% end %>
                 </p>
-                
-                <p class="card-text">safe?
+
+                <p class="card-text"> Safe?
                   <% if item.toxic == true %>
                     <i class="fas fa-paw"></i><i class="fas fa-times"></i>
                   <% else %>
