@@ -645,4 +645,20 @@ Shop.create!(
   picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637876128/Bloom/Shops/frank_iqxhcx.jpg"
 )
 
+Shop.create!(
+  name: "Boby la Plante",
+  url: "https://www.bobylaplante.com/",
+  address: "106 Rue de Patay, 75013 Paris, France",
+  phone_number: "+33 6 34 42 45 28",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638299245/Bloom/Shops/boby_la_plante_qnkamy.jpg"
+)
+
+Shop.create!(
+  name: "LEAF",
+  url: "https://www.facebook.com/leaf.paris/",
+  address: "46 Rue Albert Thomas, 75010 Paris, France",
+  phone_number: "+33 1 83 89 83 99",
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638299247/Bloom/Shops/LEAF_nogueh.jpg"
+)
+
 puts "Finished seed! :)"
