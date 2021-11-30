@@ -1,5 +1,5 @@
 .footer {
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   background-color: $green;
   color: $pink;
   display: flex;
@@ -9,6 +9,7 @@
   ul {
     list-style-type: none;
     margin: 0;
+    padding: 0;
   }
 
   a:link, a:visited {
@@ -16,10 +17,19 @@
   }
 
   #socials {
-    font-size: 24px;
+    font-size: 40px;
 
     a:link {
       padding: 0 0.5rem;
     }
   }
+}
+
+.navbar-brand img {
+  width: 40px;
+  padding-left: 0.5rem;
+}
+
+.footer-logo {
+  width: 95.97px;
 }

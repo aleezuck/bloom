@@ -43,3 +43,14 @@ ul {
 .confirm {
   width: 150px;
 }
+
+.shop-form form {
+  display: flex;
+  #query {
+    height: 49.96px;
+    width: 250px;
+  }
+  .btn {
+    margin-left: 0.85rem;
+  }
+}

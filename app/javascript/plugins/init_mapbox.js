@@ -2,9 +2,17 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-const fitMapToMarkers = (map, markers) => {
+
+const fitMapToMarkers = (map, markers, mapElement) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  const markersFiltered = JSON.parse(mapElement.dataset.filteredMarkers);
+
+  if (markersFiltered === []) {
+    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+  } else {
+    markersFiltered.forEach(markerFiltered => bounds.extend([ markerFiltered.lng, markerFiltered.lat ]))
+  }
+
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 500 });
 };
 
@@ -55,7 +63,7 @@ const initMapbox = () => {
       map.resize()
     })
 
-    fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers, mapElement);
     linkShopToMap();
   }
 };
