@@ -3,10 +3,12 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @post_reply = PostReply.new
   end
 
   def create
     @post = Post.new(post_params)
+    @post_reply = PostReply.new
     @post.user = current_user
     @post.plant = @plant
     authorize(@post)
