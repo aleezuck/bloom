@@ -1,7 +1,7 @@
 <div class="container-main">
   <div class="top">
     <div>
-      <%= link_to 'Return to list', :back, class: 'btn btn-primary' %>
+      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
     </div>
       <div class="title">
         <h1><%= @plant.name %></h1>
@@ -48,11 +48,15 @@
   </div>
 
   <div class="bottom">
-    <div>
-      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
-    </div>
-    <div>
-      <%= link_to 'Shops near me',  shops_path, class: 'btn btn-primary' %>
+    <div class="shop-form">
+      <%= form_tag shops_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Enter your postal code"
+        %>
+        <%= submit_tag "Shops near me", class: "btn btn-primary" %>
+      <% end %>
     </div>
     <div>
       <%= link_to 'See forum', plant_posts_path(@plant), class: 'btn btn-primary' %>

@@ -2,9 +2,17 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
-const fitMapToMarkers = (map, markers) => {
+
+const fitMapToMarkers = (map, markers, mapElement) => {
   const bounds = new mapboxgl.LngLatBounds();
-  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  const markersFiltered = JSON.parse(mapElement.dataset.filteredMarkers);
+
+  if (markersFiltered === []) {
+    markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+  } else {
+    markersFiltered.forEach(markerFiltered => bounds.extend([ markerFiltered.lng, markerFiltered.lat ]))
+  }
+
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 500 });
 };
 
@@ -19,7 +27,7 @@ const initMapbox = () => {
     });
 
     const linkShopToMap = () => {
-        document.querySelectorAll(".shop-card").forEach((shop) => {
+      document.querySelectorAll(".shop-card").forEach((shop) => {
         shop.addEventListener("click", (event) => {
           flyToStore(event.currentTarget);
         });
@@ -33,14 +41,9 @@ const initMapbox = () => {
 
       map.flyTo({
         center: newCoords,
-        zoom: 16
+        zoom: 15
       });
     }
-
-    map.addControl(new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    }));
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -51,12 +54,16 @@ const initMapbox = () => {
         .addTo(map);
     });
 
+    map.addControl(new MapboxGeocoder({
+      accessToken: mapboxgl.accessToken,
+      mapboxgl: mapboxgl
+    }));
 
     map.once('load', function () {
       map.resize()
     })
 
-    fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers, mapElement);
     linkShopToMap();
   }
 };
