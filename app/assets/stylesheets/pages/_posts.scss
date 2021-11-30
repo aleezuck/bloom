@@ -21,7 +21,7 @@
 }
 
 .plant-post {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   display: flex;
 
   .post-body {
@@ -31,4 +31,10 @@
   a:hover, a:active, .upvoted {
     color: $bright-green;
   }
+}
+
+.post-replies {
+  margin-left: 50px;
+  border-left: 1px dashed $bright-green;
+  padding-left: 25px;
 }
