@@ -17,24 +17,11 @@
 
     <div>
       <% @posts.each do |post| %>
-        <div class="plant-post">
-          <% if post.user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar" %>
-          <% else %>
-            <%= image_tag "avatar-placeholder.png", class: "avatar" %>
+        <%= render 'post', post: post %>
+        <div class="post-replies">
+          <% post.post_replies.each do |reply| %>
+            <%= render 'reply', reply: reply %>
           <% end %>
-          <div class="post-body">
-            <p class="post-title"><small><strong><%= post.user.username %></strong></small></p>
-            <p class="post-content"><%= post.content %></p>
-            <p class="post-bottom">
-              <span class="upvote-post">
-                <%= link_to upvote_post_path(post), method: :patch do %>
-                  <i class="fas fa-thumbs-up"></i>
-                <% end %>
-                <span class="upvote-number"><%= post.upvotes %></span>
-              </span>
-            </p>
-          </div>
         </div>
       <% end %>
     </div>
