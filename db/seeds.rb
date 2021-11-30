@@ -57,7 +57,11 @@ plant = Plant.create!(
   toxic: true,
   light_level: 3,
   price: 40,
-  care_level: "medium"
+  care_level: "medium",
+  humidity: "This plant will thrive in almost any environment, but if you want to give it a special treat, gently mist it once a week using a Mister. It’s best to mist your Monstera in the morning so the water has plenty of time to evaporate before evening.",
+  lightdescription: "This evergreen prefers bright, indirect sunlight in temperatures that remain consistently between 65 and 75 degrees Fahrenheit. Too much direct light in warmer months may burn the foliage. Still, set indoor plants outside at least once a year in direct sunlight to encourage lush growth. Outdoors, the Swiss cheese plant can grow in the full shade of deep woodlands and semi-shade of light woodlands.",
+  watering: "Give the plant regular waterings during the growing season every one to two weeks. Water until excess drains through drainage holes. Do not put the excess water back into the plant's container because the plant has taken all the water it needs. The soil will need to dry out slightly in between waterings. Water only occasionally in fall and winter. To increase humidity indoors, mist the foliage using a spray bottle of demineralized water or rainwater.",
+  careinfo: "If needed or desired, use a balanced liquid 20-20-20 fertilizer every few weeks during the growing season for indoor plants. Dilute 1/2 teaspoon of the fertilizer in a gallon of water. Use the diluted fertilizer in place of a regular watering. Pour the mixture into the soil until it begins to flow out of the drainage holes. Throw out the excess diluted fertilizer because the plant has taken what it needs and cannot use the extra that it drains off."
 )
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866745/Bloom/Plants/Monstera_deliciosa_p_nxq1eU566aWi_xxfpm2.jpg")
 photo.plant = plant
@@ -78,8 +82,13 @@ plant = Plant.create!(
   toxic: false,
   light_level: 2,
   price: 8,
-  care_level: "medium"
+  care_level: "medium",
+  humidity: "Do not allow to fall below about 60ºF. They thrive at 70ºF. High humididty is prefered, so idieally keep it in your bathroom or spray it with water ",
+  lightdescription: "Bright, but not direct sunlight. They are commonly grown under fluorescent lights placed 12 to 15 inches above the leaves.",
+  watering: "Keep soil moist with warm water and strive for high humidity. Do not allow water to contact the leaves to prevent damage, other than light misting. Water from below, or push the water spout into the soil when watering. Don't allow the plant to sit in water.",
+  careinfo: "During the active growing season (spring and summer), fertilize every 2 weeks with a high phosphorous plant food. Only start to fertilize when the plant appears to need an extra boost (slow, thin growth; pale or yellowing leaves). Over-fertilizing is a more common problem than under-fertilizing, since most soil mixes come infused with plenty of nutrients."
 )
+
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866744/Bloom/Plants/1521228775791_muczia.jpg")
 photo.plant = plant
 photo.save!
@@ -560,6 +569,46 @@ plant = Plant.create!(
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638222848/Bloom/Plants/Planta-Potos-Neon-Gu_C3_ADa-de-cuidados_lbganx.jpg")
 photo.plant = plant
 photo.save!
+
+plant = Plant.create!(
+  name: "Ficus Tineke",
+  description: "A variegated cultivar of the traditional rubber tree, the Ficus Tineke is a gorgeous and colorful houseplant. With hues of light green, cream, and even some pink, this indoor plant makes a soft but striking statement.  ",
+  category: "flowering",
+  toxic: true,
+  light_level: 2,
+  price: 15,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638308692/Bloom/Plants/FicusTineke_ParentTerracottaPot_sqWeb_SHUT_gghrdj.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Buddhist Pine",
+  description: "A Podocarpus plant, also called a Buddhist Pine or Japanese Yew, is a very dense, upright, slow growing evergreen that originally came from China and Japan. It has long slender dark green leathery leaves.   ",
+  category: "flowering",
+  toxic: true,
+  light_level: 1,
+  price: 15,
+  care_level: "Low"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638309096/Bloom/Plants/image_xw07qt.jpg")
+photo.plant = plant
+photo.save!
+
+plant = Plant.create!(
+  name: "Birds Nest Fern",
+  description: "Native to tropical regions such as southeast Asia, Australia, east Africa and Hawaii to name a few, Bird’s Nest Ferns (Asplenium Nidus) are typically found in palm trees. Given the right indoor environment, they will thrive and make for a wonderfully unique houseplant.  ",
+  category: "flowering",
+  toxic: false,
+  light_level: 2,
+  price: 15,
+  care_level: "Medium"
+)
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638309448/Bloom/Plants/15622_tedtjq.jpg")
+photo.plant = plant
+photo.save!
+
 
 puts "Finished seed! :)"
 
