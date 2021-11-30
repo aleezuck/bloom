@@ -26,11 +26,11 @@
 
       <div>
         <div class="dropdown">
-          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10">
+          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10" >
             Children/pets?
           </button>
           <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline" >
               <%= radio_button_tag(:pets, "true", params[:pets] == "true", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
               <%= label_tag(:pets_true, "Yes", class: "form-check-label") %>
             </div>
