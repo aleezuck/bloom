@@ -9,7 +9,7 @@
     <div id="shop-cards">
       <% @shops.each do |shop| %>
         <div class="shop-card" data-lat="<%= shop.latitude %>" data-long="<%= shop.longitude %>">
-          <div class="shop-img" style="background-image: url('<%= cl_image_path(shop.picture
+          <div class="shop-img" style="background-image: url('<%= image_path(shop.picture
             ) %>')">
           </div>
           <div class="shop-card-text">
@@ -64,6 +64,7 @@
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-1 order-lg-2">
     <div id="map"
       data-markers="<%= @markers.to_json %>"
+      data-filtered-markers="<%= @filtered_markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>

@@ -40,5 +40,7 @@ class PlantsController < ApplicationController
   def show
     @plant = Plant.find(params[:id])
     authorize(@plant)
+
+    @wishlist_item = WishlistItem.where(user: current_user, plant: @plant)
   end
 end
