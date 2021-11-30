@@ -6,27 +6,26 @@ class ShopsController < ApplicationController
     @result = search_websites
     @result_patch = patch_plants
     @shops = policy_scope(Shop)
-    @shops_map = Shop.all
-    @filtered_shops_map = Shop.search_by_address("%#{params[:query]}%")
+
     if params[:query].present?
       @shops = Shop.search_by_address("%#{params[:query]}%")
+      @shops = Shop.near(@shops.first.address, 5) if @shops.size == 1
+
+      @filtered_markers = @shops.geocoded.map do |shop|
+        {
+          lat: shop.latitude,
+          lng: shop.longitude
+        }
+      end
     else
       @shops = Shop.all
-
     end
 
-    @markers = @shops_map.geocoded.map do |shop|
+    @markers = Shop.all.geocoded.map do |shop|
       {
         lat: shop.latitude,
         lng: shop.longitude,
         info_window: render_to_string(partial: "info_window", locals: { shop: shop })
-      }
-    end
-
-    @filtered_markers = @filtered_shops_map.geocoded.map do |shop|
-      {
-        lat: shop.latitude,
-        lng: shop.longitude
       }
     end
   end
@@ -62,6 +61,3 @@ class ShopsController < ApplicationController
     end
   end
 end
-
-# Flat.near('Tour Eiffel', 10)      # venues within 10 km of Tour Eiffel
-# Flat.near([40.71, 100.23], 20)    # venues within 20 km of a point
