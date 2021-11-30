@@ -6,7 +6,7 @@
 <div class="container_card">
   <div class="row">
     <% if @my_wishlist_items.blank? %>
-      <p>You have no items on your wishlist yet.</p>
+      <p>You have no plants on your wishlist yet.</p>
     <% else %>
       <% @my_wishlist_items.each do |item| %>
         <%= render 'plants/plant_card', item: item.plant %>
