@@ -1,40 +1,40 @@
 <div class="container-main">
   <div class="top">
     <div>
-      <%= link_to 'Return to list', :back, class: 'btn btn-primary' %>
+      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
     </div>
       <div class="title">
         <h1><%= @plant.name %></h1>
       </div>
 
       <div class="confirm">
-        <%= link_to plant_wishlist_items_path(@plant), method: :post do %>
-          <i class="far fa-heart fa-2x"></i>
+        <%= link_to toggle_wishlist_path(@plant), method: :post do %>
+          <i class="far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
         <% end %>
       </div>
     </div>
 
   <div class="main">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <%= cl_image_tag(@plant.plant_photos.first.url, width: 400, height: 450, crop: :fill) %>
-                </div>
-                  <% @plant.plant_photos.drop(1).each do |photo_id| %>
-                    <div class="carousel-item">
-                      <%= cl_image_tag photo_id.url, height: 450, width: 400, crop: :fill %>
-                    </div>
-                  <% end %>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <%= image_tag(@plant.plant_photos.first.url, width: 400, height: 450) %>
+        </div>
+          <% @plant.plant_photos.drop(1).each do |photo_id| %>
+            <div class="carousel-item">
+              <%= image_tag photo_id.url, height: 450, width: 400 %>
             </div>
+          <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
     <div class="texter">
       <ul>
@@ -61,11 +61,16 @@
 </div>
 
   <div class="bottom">
-    <div>
-      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
-    </div>
-    <div>
-      <%= link_to 'Shops near me',  shops_path, class: 'btn btn-primary' %>
+    <div class="shop-form">
+      <%= form_tag shops_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Enter your postal code"
+        %>
+        <%= hidden_field_tag :plant_id, @plant.id %>
+        <%= submit_tag "Shops near me", class: "btn btn-primary" %>
+      <% end %>
     </div>
     <div>
       <%= link_to 'See forum', plant_posts_path(@plant), class: 'btn btn-primary' %>

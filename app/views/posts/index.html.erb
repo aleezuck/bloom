@@ -5,7 +5,7 @@
 
   <div class="plant-post-grid">
     <div>
-      <%= cl_image_tag(@plant.plant_photos.first.url, width: 400, height: 450, crop: :fill) %>
+      <%= image_tag(@plant.plant_photos.first.url, width: 400, height: 450) %>
       <%= simple_form_for([@plant, @post], html: { class: 'post-form' } ) do |f| %>
         <%= f.input :content, label: false, placeholder: 'Post a comment' %>
         <%= f.submit class: 'btn btn-primary btn-small' %>
@@ -19,7 +19,7 @@
       <% @posts.each do |post| %>
         <div class="plant-post">
           <% if post.user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <%= cl_image_tag current_user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar" %>
           <% else %>
             <%= image_tag "avatar-placeholder.png", class: "avatar" %>
           <% end %>
