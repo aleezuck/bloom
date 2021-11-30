@@ -17,10 +17,6 @@ class WishlistItemPolicy < ApplicationPolicy
     true
   end
 
-  def destroy?
-    record.user = user
-  end
-
   def toggle?
     true
   end
