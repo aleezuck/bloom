@@ -8,7 +8,7 @@
       </div>
 
       <div class="confirm">
-        <%= link_to plant_wishlist_items_path(@plant), method: :post do %>
+        <%= link_to toggle_wishlist_path(@plant), method: :post do %>
           <i class="far fa-heart fa-2x"></i>
         <% end %>
       </div>
