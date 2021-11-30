@@ -49,12 +49,13 @@
 
   <div class="bottom">
     <div class="shop-form">
-      <%= form_tag shops_path(plant_id: @plant), method: :get do %>
+      <%= form_tag shops_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Enter your postal code"
         %>
+        <%= hidden_field_tag :plant_id, @plant.id %>
         <%= submit_tag "Shops near me", class: "btn btn-primary" %>
       <% end %>
     </div>
