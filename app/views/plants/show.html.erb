@@ -9,7 +9,7 @@
 
       <div class="confirm">
         <%= link_to toggle_wishlist_path(@plant), method: :post do %>
-          <i class="far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
+          <i class="wishlist-heart far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
         <% end %>
       </div>
     </div>
@@ -18,11 +18,11 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-            <%= image_tag(@plant.plant_photos.first.url, width: 400, height: 450) %>
+            <%= image_tag(@plant.plant_photos.first.url, width: 450, height: 500) %>
         </div>
           <% @plant.plant_photos.drop(1).each do |photo_id| %>
             <div class="carousel-item">
-              <%= image_tag photo_id.url, height: 450, width: 400 %>
+              <%= image_tag photo_id.url, width: 450, height: 500 %>
             </div>
           <% end %>
       </div>
