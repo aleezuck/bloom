@@ -48,15 +48,20 @@
   </div>
 
 <p>
-  <a class="something" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Click for plant-care information
+  <a class="plant_care" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <div class="hover_green"> Click for plant-care information </div>
   </a>
 </p>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
-    <i class="fas fa-spray-can"></i>
-    <i class="far fa-sun"></i>
-    <i class="fas fa-tint"></i>
+    <div class="description_plant"> <i class="fas fa-spray-can"></i> <strong>Humidity</strong>  </div>
+    <%= @plant.humidity %>
+    <div class="description_plant"><i class="far fa-sun"></i>  <strong>Sun level</strong> </div>
+    <%= @plant.lightdescription%>
+    <div class="description_plant"><i class="fas fa-tint"></i>  <strong>Watering</strong> </div>
+    <%= @plant.watering%>
+    <div class="description_plant"><i class="fas fa-oil-can"></i>  <strong>Fertilizer</strong> </div>
+    <%= @plant.careinfo %>
   </div>
 </div>
 

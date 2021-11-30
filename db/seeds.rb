@@ -32,7 +32,11 @@ plant = Plant.create!(
   toxic: true,
   light_level: 2,
   price: 30,
-  care_level: "low"
+  care_level: "low",
+  humidity: "A moist atmosphere helps keep his leaves healthy. Give him a good mist every few days. Or put him in a steamy bathroom.",
+  lightdescription: "Set the plant in a location with bright, indirect sunlight. Find a position near a window where the sun’s rays never actually touch the foliage. While it’s normal for older leaves to yellow, if this happens to several leaves at the same time, the plant may be getting too much light. On the other hand, if the stems are long and leggy with several inches between leaves, the plant probably isn’t getting enough light.",
+  watering: "When growing philodendron plants, allow the top inch (2.5 cm.) of soil to dry out between waterings. The length of your index finger to the first knuckle is about an inch (2.5 cm.), so inserting your finger into the soil is a good way to check the moisture level. Droopy leaves can mean that the plant is getting too much or not enough water. But the leaves recover quickly when you correct the watering schedule.",
+  careinfo: "Fertilizer – Feed philodendron houseplants with a balanced liquid foliage houseplant fertilizer that contains macro-nutrients. Water the plant with the fertilizer monthly in spring and summer and every six to eight weeks in fall and winter. Slow growth and small leaf size is the plant’s way of telling you that it isn’t getting enough fertilizer. Pale new leaves usually indicate that the plant isn’t getting enough calcium and magnesium, which are essential micro-nutrients for philodendrons."
 )
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866745/Bloom/Plants/heart_leaf_philodendron_438_detail_vc511u.jpg")
 photo.plant = plant
