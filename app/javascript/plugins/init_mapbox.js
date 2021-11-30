@@ -7,13 +7,15 @@ const fitMapToMarkers = (map, markers, mapElement) => {
   const bounds = new mapboxgl.LngLatBounds();
   const markersFiltered = JSON.parse(mapElement.dataset.filteredMarkers);
 
-  if (markersFiltered === []) {
+  if (markersFiltered === null) {
     markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
   } else {
     markersFiltered.forEach(markerFiltered => bounds.extend([ markerFiltered.lng, markerFiltered.lat ]))
   }
 
-  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 500 });
+  map.once('load', function () {
+    map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 500 });
+  })
 };
 
 const initMapbox = () => {
