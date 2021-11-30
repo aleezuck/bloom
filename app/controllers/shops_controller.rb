@@ -1,11 +1,10 @@
 class ShopsController < ApplicationController
   def index
     @shops = policy_scope(Shop)
-
     @shops_map = Shop.all
+    @filtered_shops_map = Shop.search_by_address("%#{params[:query]}%")
     if params[:query].present?
       @shops = Shop.search_by_address("%#{params[:query]}%")
-      @filtered_shops_map = Shop.search_by_address("%#{params[:query]}%")
     else
       @shops = Shop.all
 
