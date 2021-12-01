@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@plant.name} - #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@plant.name}: #{@plant.description}" %>
+<% content_for :meta_image, image_path(@plant.plant_photos.first.url) %>
+
 <div class="container-main">
   <div class="top">
     <div>
