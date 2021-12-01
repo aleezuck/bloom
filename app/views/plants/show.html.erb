@@ -7,22 +7,22 @@
         <h1><%= @plant.name %></h1>
       </div>
 
-      <div class="confirm">
-        <%= link_to toggle_wishlist_path(@plant), method: :post do %>
-          <i class="wishlist-heart far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
-        <% end %>
-      </div>
+    <div class="confirm">
+      <%= link_to toggle_wishlist_path(@plant), method: :post do %>
+        <i class="wishlist-heart far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
+      <% end %>
     </div>
+  </div>
 
   <div class="main">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-            <%= image_tag(@plant.plant_photos.first.url, width: 450, height: 500) %>
+            <%= image_tag(@plant.plant_photos.first.url, width: 350, height: 400) %>
         </div>
           <% @plant.plant_photos.drop(1).each do |photo_id| %>
             <div class="carousel-item">
-              <%= image_tag photo_id.url, width: 450, height: 500 %>
+              <%= image_tag photo_id.url, width: 350, height: 400 %>
             </div>
           <% end %>
       </div>
@@ -44,41 +44,43 @@
         <li><p><strong>Care level:</strong> <%= @plant.care_level %></p></li>
         <li><p><strong>Toxic:</strong> <%= @plant.toxic %></p></li>
       </ul>
+
+      <div class="bottom">
+        <div class="shop-form">
+          <%= form_tag shops_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Enter your postal code"
+            %>
+            <%= hidden_field_tag :plant_id, @plant.id %>
+            <%= submit_tag "Shops near me", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+
+        <div class= "forum">
+          <%= link_to 'See forum', plant_posts_path(@plant), class: 'btn btn-primary' %>
+        </div>
+      </div>
     </div>
   </div>
 
-<p>
-  <a class="plant_care" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    <div class="hover_green"> Click for plant-care information </div>
-  </a>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <div class="description_plant"> <i class="fas fa-spray-can"></i> <strong>Humidity</strong>  </div>
-    <%= @plant.humidity %>
-    <div class="description_plant"><i class="far fa-sun"></i>  <strong>Sun level</strong> </div>
-    <%= @plant.lightdescription%>
-    <div class="description_plant"><i class="fas fa-tint"></i>  <strong>Watering</strong> </div>
-    <%= @plant.watering%>
-    <div class="description_plant"><i class="fas fa-oil-can"></i>  <strong>Fertilizer</strong> </div>
-    <%= @plant.careinfo %>
-  </div>
-</div>
+  <h2 class= "center_drop">
+    <a class="plant_care" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+      <div class="hover_green"> Click for plant-care information <i class="fas fa-arrow-circle-down"></i></div>
+    </a>
+  </h2>
 
-  <div class="bottom">
-    <div class="shop-form">
-      <%= form_tag shops_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Enter your postal code"
-        %>
-        <%= hidden_field_tag :plant_id, @plant.id %>
-        <%= submit_tag "Shops near me", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to 'See forum', plant_posts_path(@plant), class: 'btn btn-primary' %>
+  <div class="collapse plant_collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="description_plant"> <i class="fas fa-spray-can"></i> <strong>Humidity</strong>  </div>
+      <%= @plant.humidity %>
+      <div class="description_plant"><i class="far fa-sun"></i>  <strong>Sun level</strong> </div>
+      <%= @plant.lightdescription%>
+      <div class="description_plant"><i class="fas fa-tint"></i>  <strong>Watering</strong> </div>
+      <%= @plant.watering%>
+      <div class="description_plant"><i class="fas fa-oil-can"></i>  <strong>Fertilizer</strong> </div>
+      <%= @plant.careinfo %>
     </div>
   </div>
 </div>
