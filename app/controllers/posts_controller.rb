@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     authorize(@post)
 
     if @post.save
-      redirect_to plant_posts_path(@plant)
+      redirect_to plant_posts_path(@plant, anchor: "post-#{@post.id}")
     else
       render :index
     end

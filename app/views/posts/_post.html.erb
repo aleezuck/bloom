@@ -1,6 +1,6 @@
-<div class="plant-post">
+<div class="plant-post" id="post-<%= post.id %>">
   <% if post.user.photo.attached? %>
-    <%= cl_image_tag current_user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar" %>
+    <%= cl_image_tag post.user.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar" %>
   <% else %>
     <%= image_tag "avatar-placeholder.png", class: "avatar" %>
   <% end %>
@@ -15,9 +15,16 @@
         <span class="upvote-number"><%= post.upvotes %></span>
       </span>
       <span class="pl-3">
-        <a data-toggle="collapse" href="#replyForm<%= post.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <a data-toggle="collapse" href="#replyForm<%= post.id %>" role="button" aria-expanded="false" aria-controls="replyForm<%= post.id %>">
           <i class="fas fa-reply"></i> Reply
         </a>
+      </span>
+      <span class="pl-3">
+        <% unless post.post_replies.blank? %>
+          <a data-toggle="collapse" href="#post<%= post.id %>Replies" role="button" aria-expanded="false" aria-controls="post<%= post.id %>Replies">
+            See <%= pluralize post.post_replies.count, 'reply' %>
+          </a>
+        <% end %>
       </span>
     </p>
   </div>
