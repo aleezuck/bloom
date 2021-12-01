@@ -1,5 +1,9 @@
 <div data-plant-list-target="list">
-  <h2 class="text-center"><%= pluralize @plants.count, 'plant' %> found that match your criteria</h2>
+  <% if params[:query].present? || params[:max_price].present? || params[:light_level].present? || params[:care_level].present? || params[:pets].present? %>
+    <h2 class="text-center"><%= pluralize @plants.count, 'plant' %> found that match your criteria</h2>
+  <% else %>
+    <h2 class="text-center">All plants</h2>
+  <% end %>
 
   <div class="container_card">
     <div class="row">
