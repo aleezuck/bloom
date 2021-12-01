@@ -27,6 +27,7 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
+        marker_id: "marker-#{shop.id}",
         info_window: render_to_string(partial: "info_window", locals: { shop: shop })
       }
     end
