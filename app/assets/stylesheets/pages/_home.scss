@@ -29,6 +29,7 @@
   }
 }
 
+
 #home-form {
   margin-top: 10rem;
   padding: 4rem 0;
@@ -41,4 +42,34 @@
 
 #plant-search {
   max-width: 600px;
+}
+
+.info-home {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.info-body {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 150px;
+
+  img {
+    background-color: #FFCFCB;
+    border-radius: 20px;
+  }
+}
+
+.info-text {
+  width: 250px;
+}
+
+
+#small-info {
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+#pad-info {
+  padding-top: 30px;
 }
