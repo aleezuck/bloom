@@ -45,15 +45,22 @@ const initMapbox = () => {
         center: newCoords,
         zoom: 15
       });
+      // target marker corresponding to currentFeature
+      const targetMarker = document.getElementById(`marker-${currentFeature.id}`);
+      setTimeout(() => {
+        targetMarker.click();
+      }, 1200);
     }
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.info_window);
-      new mapboxgl.Marker()
+      const newMarker = new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(map);
+        const mapboxMarker = newMarker.getElement();
+        mapboxMarker.id = marker.marker_id;
     });
 
     map.addControl(new MapboxGeocoder({
