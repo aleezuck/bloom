@@ -10,7 +10,7 @@ class PostRepliesController < ApplicationController
     authorize(@post_reply)
 
     if @post_reply.save
-      redirect_to plant_posts_path(@plant)
+      redirect_to plant_posts_path(@plant, anchor: "reply-#{@post_reply.id}")
     else
       # raise
       render 'posts/index'

@@ -4,12 +4,13 @@
 
 <div class="container-main">
   <div class="top">
-    <div>
+    <div class="back-link">
       <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
     </div>
-      <div class="title">
-        <h1><%= @plant.name %></h1>
-      </div>
+
+    <div class="title">
+      <h1><%= @plant.name %></h1>
+    </div>
 
     <div class="confirm">
       <%= link_to toggle_wishlist_path(@plant), method: :post do %>
