@@ -1,5 +1,5 @@
 <%= link_to shop.url, target: "_blank" do %>
-  <div class="shop-popup">
+  <div id="shop-<%= shop.id %>" class="shop-popup">
     <p><%= image_tag(shop.picture, width: 80, height: 90, crop: :fill) %></p>
     <h2><%= shop.name %></h2>
   </div>

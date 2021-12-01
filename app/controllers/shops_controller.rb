@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
     @result = search_websites
     @result_patch = patch_plants
     @result_still = still_plants
+    @result_piante = piante_plants
     @shops = policy_scope(Shop)
 
     if params[:query].present?
@@ -26,6 +27,7 @@ class ShopsController < ApplicationController
       {
         lat: shop.latitude,
         lng: shop.longitude,
+        marker_id: "marker-#{shop.id}",
         info_window: render_to_string(partial: "info_window", locals: { shop: shop })
       }
     end
@@ -74,6 +76,21 @@ class ShopsController < ApplicationController
     else
       { quantity2: x2.text.match(/(\d+)/)[1].to_i,
         url2: @url2 }
+    end
+  end
+
+  def piante_plants
+    @url3 = "https://piante.ca/search?type=product%2Carticle&q=philodendron"
+
+    html_file3 = URI.open(@url3).read
+    html_doc3 = Nokogiri::HTML(html_file3)
+
+    x3 = html_doc3.search('.section-header__title')
+    if x3.nil?
+      { quantity3: 0 }
+    else
+      { quantity3: x3.text.match(/(\d+)/)[1].to_i,
+        url3: @url3 }
     end
   end
 end
