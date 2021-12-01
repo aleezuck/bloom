@@ -8,4 +8,15 @@ const upvotePost = () => {
   });
 }
 
-export { upvotePost };
+const showCollapse = (event) => {
+  const hash = window.location.href.split("#")[1];
+  const reply = document.getElementById(hash);
+  reply.parentElement.classList.add("show");
+  reply.scrollIntoView();
+}
+
+const expandReplies = () => {
+  window.addEventListener('turbolinks:load', showCollapse, false);
+}
+
+export { upvotePost, expandReplies };

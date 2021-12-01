@@ -30,7 +30,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { changeColor } from '../components/wishlist';
-import { upvotePost } from '../components/posts';
+import { expandReplies, upvotePost } from '../components/posts';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   changeColor();
   upvotePost();
+  expandReplies();
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
