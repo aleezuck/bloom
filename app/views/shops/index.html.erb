@@ -27,6 +27,7 @@
         </div>
       <% end %>
     </div>
+
     <div id="online-shops">
       <p>ONLINE SHOPS</p>
       <% if @result[:quantity] > 0 %>
@@ -64,7 +65,26 @@
             </div>
         </div>
       <% end %>
-    </div>
+
+    <% if @result_still[:quantity2] > 0 %>
+      <div id="shop-cards">
+        <div class="shop-card">
+          <div class="shop-img" style="background-image: url('https://res.cloudinary.com/ds1rugee1/image/upload/v1638394526/Bloom/Shops/5c8be4585dfa995a76437e26_b3wrmp.png')">
+          </div>
+            <div class="shop-card-text">
+              <h2>The Still</h2>
+              <p class="online-shop-card">This website has <strong><%= @result_still[:quantity2]%> results</strong> for this plant</p>
+              <div class="shop-card-address">
+                <p><i class="fas fa-map-marker-alt"></i></p>
+                <p>Can deliver anyware in the world. Headquarted in New york.</p>
+              </div>
+              <p class="text-center"><%= link_to "visit website",  @result_still[:url2] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   </div>
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-1 order-lg-2">
     <div id="map"
