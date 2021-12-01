@@ -6,25 +6,40 @@
 
 .title {
   text-align: center;
+  padding-right: 160px;
 }
 
 .main {
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 6px, rgba(0, 0, 0, 0.04) 0px 12px 13px, rgba(0, 0, 0, 0.04) 0px -3px 5px;
+  position: relative;
 
   img {
     object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
   }
 }
 
 .container-main {
-  padding-bottom: 30px;
+  padding-bottom: 120px;
+  padding-top: 20px;
 }
 
 .texter {
   list-style-type: none;
+  padding-top: 20px;
 }
 
 ul {
@@ -33,15 +48,6 @@ ul {
 
 .big_letter {
   font-size: 30px;
-}
-
-.bottom {
-  display: flex;
-  justify-content: space-between;
-}
-
-.confirm {
-  width: 150px;
 }
 
 .shop-form form {
@@ -63,10 +69,29 @@ ul {
   padding-top: 20px;
 }
 
-.collapse {
-  padding-bottom: 30px;
-}
-
 .hover_green :hover{
   color: rgba(14, 44, 23, 0.7);
+}
+
+.forum {
+  padding-left: 100px;
+}
+
+.hover_green {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.center_drop {
+  font-size: large;
+  padding-bottom: 40px;
+}
+
+.carousel {
+  max-width: 350px;
+}
+.carousel,
+.carousel-inner,
+.carousel-item {
+  border-radius: 10px;
 }
