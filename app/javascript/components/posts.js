@@ -10,9 +10,16 @@ const upvotePost = () => {
 
 const showCollapse = (event) => {
   const hash = window.location.href.split("#")[1];
-  const reply = document.getElementById(hash);
-  reply.parentElement.classList.add("show");
-  reply.scrollIntoView();
+  if (hash) {
+    if (hash.startsWith("reply")) {
+      const reply = document.getElementById(hash);
+
+      if (reply) {
+        reply.parentElement.classList.add("show");
+        reply.scrollIntoView();
+      }
+    }
+  }
 }
 
 const expandReplies = () => {
