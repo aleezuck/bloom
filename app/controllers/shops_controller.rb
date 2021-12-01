@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
   def index
     @result = search_websites
     @result_patch = patch_plants
+    @result_still = still_plants
     @shops = policy_scope(Shop)
 
     if params[:query].present?
@@ -58,6 +59,21 @@ class ShopsController < ApplicationController
     else
       { quantity1: x1.text.match(/(\d+)/)[1].to_i,
         url1: @url1 }
+    end
+  end
+
+  def still_plants
+    @url2 = "https://www.thesill.com/search?q=#{@plant.name}"
+
+    html_file2 = URI.open(@url2).read
+    html_doc2 = Nokogiri::HTML(html_file2)
+
+    x2 = html_doc2.search('.tabs-title').first
+    if x2.nil?
+      { quantity2: 0 }
+    else
+      { quantity2: x2.text.match(/(\d+)/)[1].to_i,
+        url2: @url2 }
     end
   end
 end
