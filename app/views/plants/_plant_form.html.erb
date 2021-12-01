@@ -1,92 +1,92 @@
 <%= form_tag plants_path, method: :get, data: { plant_list_target: 'form' } do %>
-    <div class="plant-form" data-controller="plant-form">
-      <div>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Name",
-          data: {
-            plant_list_target: "nameInput",
-            action: "keyup->plant-list#update"
-          }
-        %>
-      </div>
+  <div class="plant-form" data-controller="plant-form">
+    <div>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Name",
+        data: {
+          plant_list_target: "nameInput",
+          action: "keyup->plant-list#update"
+        }
+      %>
+    </div>
 
-      <div>
-        <%= text_field_tag :max_price,
-          params[:max_price],
-          class: "form-control",
-          placeholder: "Max $",
-          data: {
-            plant_list_target: "priceInput",
-            action: "keyup->plant-list#update"
-          }
-        %>
-      </div>
+    <div>
+      <%= text_field_tag :max_price,
+        params[:max_price],
+        class: "form-control",
+        placeholder: "Max $",
+        data: {
+          plant_list_target: "priceInput",
+          action: "keyup->plant-list#update"
+        }
+      %>
+    </div>
 
-      <div>
-        <div class="dropdown">
-          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10" >
-            Children/pets?
-          </button>
-          <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
-            <div class="form-check form-check-inline" >
-              <%= radio_button_tag(:pets, "true", params[:pets] == "true", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:pets_true, "Yes", class: "form-check-label") %>
-            </div>
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:pets, "false", params[:pets] == "false", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:pets_false, "No", class: "form-check-label") %>
-            </div>
-            <a class="dropdown-item" href="#" data-action="click->plant-form#clearPets click->plant-list#update"><small>clear</small></a>
+    <div>
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10" >
+          Children/pets?
+        </button>
+        <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+          <div class="form-check form-check-inline" >
+            <%= radio_button_tag(:pets, "true", params[:pets] == "true", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:pets_true, "Yes", class: "form-check-label") %>
           </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="dropdown">
-          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10">
-            Level of light
-          </button>
-          <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:light_level, "low", params[:light_level] == "low", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:light_level_low, "Low", class: "form-check-label") %>
-            </div>
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:light_level, "medium", params[:light_level] == "medium", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:light_level_medium, "Medium", class: "form-check-label") %>
-            </div>
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:light_level, "high", params[:light_level] == "high", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:light_level_high, "High", class: "form-check-label") %>
-            </div>
-            <a class="dropdown-item" href="#" data-action="click->plant-form#clearLight click->plant-list#update"><small>clear</small></a>
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:pets, "false", params[:pets] == "false", class: "form-check-input", data: { plant_list_target: "petInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:pets_false, "No", class: "form-check-label") %>
           </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="dropdown">
-          <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10">
-            Level of care
-          </button>
-          <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:care_level, "low", params[:care_level] == "low", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:care_level_low, "Low", class: "form-check-label") %>
-            </div>
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:care_level, "medium", params[:care_level] == "medium", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:care_level_medium, "Medium", class: "form-check-label") %>
-            </div>
-            <div class="form-check form-check-inline">
-              <%= radio_button_tag(:care_level, "high", params[:care_level] == "high", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
-              <%= label_tag(:care_level_high, "High", class: "form-check-label") %>
-            </div>
-            <a class="dropdown-item" href="#" data-action="click->plant-form#clearCare click->plant-list#update"><small>clear</small></a>
-          </div>
+          <a class="dropdown-item" href="#" data-action="click->plant-form#clearPets click->plant-list#update"><small>clear</small></a>
         </div>
       </div>
     </div>
-  <% end %>
+
+    <div>
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10">
+          Level of light
+        </button>
+        <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:light_level, "low", params[:light_level] == "low", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:light_level_low, "Low", class: "form-check-label") %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:light_level, "medium", params[:light_level] == "medium", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:light_level_medium, "Medium", class: "form-check-label") %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:light_level, "high", params[:light_level] == "high", class: "form-check-input", data: { plant_list_target: "lightInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:light_level_high, "High", class: "form-check-label") %>
+          </div>
+          <a class="dropdown-item" href="#" data-action="click->plant-form#clearLight click->plant-list#update"><small>clear</small></a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" data-offset="15,10">
+          Level of care
+        </button>
+        <div class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton">
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:care_level, "low", params[:care_level] == "low", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:care_level_low, "Low", class: "form-check-label") %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:care_level, "medium", params[:care_level] == "medium", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:care_level_medium, "Medium", class: "form-check-label") %>
+          </div>
+          <div class="form-check form-check-inline">
+            <%= radio_button_tag(:care_level, "high", params[:care_level] == "high", class: "form-check-input", data: { plant_list_target: "careInput", action: "change->plant-list#update" }) %>
+            <%= label_tag(:care_level_high, "High", class: "form-check-label") %>
+          </div>
+          <a class="dropdown-item" href="#" data-action="click->plant-form#clearCare click->plant-list#update"><small>clear</small></a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
