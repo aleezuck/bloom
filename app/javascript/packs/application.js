@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { changeColor } from '../components/wishlist';
+import { expandReplies, upvotePost } from '../components/posts';
 import { upvotePost } from '../components/posts';
 import { initSliders } from '../components/sliders';
 
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   changeColor();
   upvotePost();
+  expandReplies();
   initSliders();
 
   $(function () {
