@@ -11,7 +11,12 @@ class ShopsController < ApplicationController
 
     if params[:query].present?
       @shops = Shop.search_by_address("%#{params[:query]}%")
-      @shops = Shop.near(@shops.first.address, 5) if @shops.size == 1
+      if @shops.size == 0
+        @shops = Shop.all
+        @no_shops_found = true
+      elsif [1,2].include? @shops.size
+        @shops = Shop.near(@shops.first.address, 10)
+      end
 
       @filtered_markers = @shops.geocoded.map do |shop|
         {

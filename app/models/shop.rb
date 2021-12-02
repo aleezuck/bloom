@@ -9,4 +9,8 @@ class Shop < ApplicationRecord
                     tsearch: { prefix: true }
                   },
                   ignoring: :accents
+
+  def blank_stars
+    5 - review
+  end
 end
