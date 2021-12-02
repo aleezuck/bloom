@@ -11,6 +11,6 @@ class Shop < ApplicationRecord
                   ignoring: :accents
 
   def blank_stars
-    5 - review
+    5 - review.round
   end
 end
