@@ -29,7 +29,7 @@ const initMapbox = () => {
     });
 
     const linkShopToMap = () => {
-      document.querySelectorAll(".shop-card").forEach((shop) => {
+      document.querySelectorAll(".regular-shop").forEach((shop) => {
         shop.addEventListener("click", (event) => {
           flyToStore(event.currentTarget);
         });

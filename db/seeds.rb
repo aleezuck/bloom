@@ -637,6 +637,15 @@ Shop.create!(
 )
 
 Shop.create!(
+  name: "Marché Milton Parc",
+  url: "https://m-miltonparc.com/",
+  address: "208 Rue Prince-Arthur Ouest, Montréal, Québec H2X 3R4, Canada",
+  phone_number: "+1 514 844 6070",
+  review: 4.9,
+  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637875789/Bloom/Shops/marche_milton_parc_mevikw.png"
+)
+
+Shop.create!(
   name: "Miss Boon",
   url: "https://missboon.ca/",
   address: "8527 Rue Drolet, Montréal, Québec H2P 1J6, Canada",
@@ -688,15 +697,6 @@ Shop.create!(
   phone_number: "+1 514 559 0879",
   review: 4.7,
   picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637875215/Bloom/Shops/dragon_flowers_q8t3aj.jpg"
-)
-
-Shop.create!(
-  name: "Marché Milton Parc",
-  url: "https://m-miltonparc.com/",
-  address: "208 Rue Prince-Arthur Ouest, Montréal, Québec H2X 3R4, Canada",
-  phone_number: "+1 514 844 6070",
-  review: 4.9,
-  picture: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637875789/Bloom/Shops/marche_milton_parc_mevikw.png"
 )
 
 Shop.create!(
