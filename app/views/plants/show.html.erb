@@ -47,11 +47,63 @@
 
     <div class="texter">
       <ul>
-        <li><p><strong>Description:</strong> <%= @plant.description %></p></li>
-        <li><p><strong>Price: $</strong><%= @plant.price %></p></li>
-        <li><p><strong>Light level:</strong> <%= @plant.light_level %></p></li>
-        <li><p><strong>Care level:</strong> <%= @plant.care_level %></p></li>
-        <li><p><strong>Toxic:</strong> <%= @plant.toxic ? "yes" : "no" %></p></li>
+        <li class="plant-show-grid">
+          <strong>
+            Price:
+          </strong>
+          <p>
+          <% if (1..25).include? @plant.price %>
+            <i class="fas fa-dollar-sign"></i>
+          <% elsif (26..50).include? @plant.price%>
+            <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+          <% else %>
+            <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+          <% end %>
+          </p>
+        </li>
+
+        <li class="plant-show-grid">
+          <strong>
+            Light level:
+          </strong>
+          <p>
+            <% if @plant.light_level == "low" %>
+              This plant requires a low level of light.
+            <% elsif @plant.light_level == "medium"%>
+              This plant requires a medium level of light.
+            <% else %>
+              This plant requires high level of light.
+            <% end %>
+          </p>
+        </li>
+
+        <li class="plant-show-grid">
+          <strong>
+            Care level:
+          </strong>
+          <p>
+            <% if @plant.care_level == "low" %>
+              A low level of care is needed for this plant.
+            <% elsif @plant.care_level == "medium"%>
+              A medium level of care is needed for this plant.
+            <% else %>
+              A high level of care is needed for this plant.
+            <% end %>
+          </p>
+        </li>
+
+        <li class="plant-show-grid">
+          <strong>
+            Toxic:
+          </strong>
+          <p><%= @plant.toxic ? "This plant is toxic for small children or pets." : "This plant is non-toxic." %></p>
+        </li>
+
+        <li class="plant-show-grid">
+          <strong>
+            Description:
+          </strong>
+          <p><%= @plant.description %></p></li>
       </ul>
 
       <div class="bottom">

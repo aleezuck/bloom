@@ -31,7 +31,7 @@ plant = Plant.create!(
   category: "leafy",
   toxic: true,
   light_level: 2,
-  price: 30,
+  price: 25,
   care_level: "low",
   humidity: "A moist atmosphere helps keep his leaves healthy. Give him a good mist every few days. Or put him in a steamy bathroom.",
   lightdescription: "Set the plant in a location with bright, indirect sunlight. Find a position near a window where the sun’s rays never actually touch the foliage. While it’s normal for older leaves to yellow, if this happens to several leaves at the same time, the plant may be getting too much light. On the other hand, if the stems are long and leggy with several inches between leaves, the plant probably isn’t getting enough light.",
