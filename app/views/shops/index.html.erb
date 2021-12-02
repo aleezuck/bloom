@@ -3,17 +3,19 @@
 <div class="row">
   <div class="col-12">
     <h1 class="text-center shop-page-header">Shops near you</h1>
-    <%= link_to "Return to plant", :back, class: "btn btn-primary" %>
-    <a href="#online-shops" class="btn btn-outline-primary ml-3">Online shops</a>
+    <%= link_to "Return to plant", plant_path(@plant), class: "btn btn-primary" %>
+    <a href="#online-shops" class="btn btn-outline-primary ml-3" data-turbolinks="false">Online shops</a>
   </div>
 </div>
+<% if @no_shops_found == true %>
+    <div id="no-shops-found-msg">Sorry, no shops found in your area. Here are all plant shops!</div>
+  <% end %>
 <div class="row shop-content">
   <div class="col-sm-12 col-md-12 col-lg-6 order-sm-2 order-lg-1">
     <div id="shop-cards">
       <% @shops.each do |shop| %>
         <div id="<%= shop.id %>" class="shop-card" data-lat="<%= shop.latitude %>" data-long="<%= shop.longitude %>">
-          <div class="shop-img" style="background-image: url('<%= image_path(shop.picture
-            ) %>')">
+          <div class="shop-img" style="background-image: url('<%= image_path(shop.picture) %>')">
           </div>
           <div class="shop-card-text">
             <h2><%= shop.name %></h2>
@@ -22,7 +24,7 @@
               <p><i class="fas fa-map-marker-alt"></i></p>
               <p><%= shop.address %></p>
             </div>
-            <p class="text-center"><%= link_to "visit website", shop.url, target: "_blank", class: "btn btn-primary btn-small" %></p>
+            <p class="text-center"><%= link_to "Website", shop.url, target: "_blank", class: "btn btn-primary btn-small" %></p>
           </div>
         </div>
       <% end %>
@@ -37,12 +39,12 @@
               </div>
               <div class="shop-card-text">
                 <h2>Plantsome</h2>
-                <p class="online-shop-card">This website has <%= @result[:quantity]%> results for this plant</p>
+                <p class="online-shop-card">This website has <strong><%= @result[:quantity]%> results</strong> for this plant</p>
                 <div class="shop-card-address">
                   <p><i class="fas fa-map-marker-alt"></i></p>
-                  <p>Can deliver anyware in the world. Headquarted in canada.</p>
+                  <p>Can deliver anywhere in the world. Headquarters in canada.</p>
                 </div>
-                <p class="text-center"><%= link_to "visit website",  @result[:url] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+                <p class="text-center"><%= link_to "Website",  @result[:url] , target: "_blank", class: "btn btn-primary btn-small" %></p>
               </div>
             </div>
         </div>
@@ -58,9 +60,9 @@
                 <p class="online-shop-card">This website has <strong><%= @result_patch[:quantity1]%> results</strong> for this plant</p>
                 <div class="shop-card-address">
                   <p><i class="fas fa-map-marker-alt"></i></p>
-                  <p>Can deliver anyware in the world. Headquarted in England.</p>
+                  <p>Can deliver anywhere in the world. Headquarters in England.</p>
                 </div>
-                <p class="text-center"><%= link_to "visit website",  @result_patch[:url1] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+                <p class="text-center"><%= link_to "Website",  @result_patch[:url1] , target: "_blank", class: "btn btn-primary btn-small" %></p>
               </div>
             </div>
         </div>
@@ -76,9 +78,9 @@
               <p class="online-shop-card">This website has <strong><%= @result_still[:quantity2]%> results</strong> for this plant</p>
               <div class="shop-card-address">
                 <p><i class="fas fa-map-marker-alt"></i></p>
-                <p>Can deliver anyware in the world. Headquarted in New york.</p>
+                <p>Can deliver anywhere in the world. Headquarters in New york.</p>
               </div>
-              <p class="text-center"><%= link_to "visit website",  @result_still[:url2] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+              <p class="text-center"><%= link_to "Website",  @result_still[:url2] , target: "_blank", class: "btn btn-primary btn-small" %></p>
             </div>
         </div>
       </div>
@@ -94,9 +96,9 @@
               <p class="online-shop-card">This website has <strong><%= @result_piante[:quantity3]%> results</strong> for this plant</p>
               <div class="shop-card-address">
                 <p><i class="fas fa-map-marker-alt"></i></p>
-                <p>Can deliver anyware in the world. Headquarted in Canada.</p>
+                <p>Can deliver anywhere in the world. Headquarters in Canada.</p>
               </div>
-              <p class="text-center"><%= link_to "visit website",  @result_piante[:url3] , target: "_blank", class: "btn btn-primary btn-small" %></p>
+              <p class="text-center"><%= link_to "Website",  @result_piante[:url3] , target: "_blank", class: "btn btn-primary btn-small" %></p>
             </div>
         </div>
       </div>
