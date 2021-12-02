@@ -5,7 +5,11 @@
 <div class="container-main">
   <div class="top">
     <div class="back-link">
-      <%= link_to 'See all plants',  plants_path, class: 'btn btn-primary' %>
+      <% if session[:search_results] %>
+        <%= link_to "Return to plants", session[:search_results], class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to 'See all plants', plants_path, class: 'btn btn-primary' %>
+      <% end %>
     </div>
 
     <div class="title">

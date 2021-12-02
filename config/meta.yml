@@ -1,6 +1,6 @@
 # config/meta.yml
 
-meta_product_name: "Bloom"
-meta_title: "Bloom - Find the perfect plant for your home"
-meta_description: "Bloom helps new plant owners find the perfect plant that matches their personal requirements."
+meta_product_name: "BLOOM"
+meta_title: "BLOOM - Find the perfect plant for your home"
+meta_description: "BLOOM helps new plant owners find the perfect plant that matches their personal requirements."
 meta_image: "cover.jpg" # should exist in `app/assets/images/`
