@@ -2,12 +2,12 @@
   <%= link_to plant_path(item) do %>
     <div class="cont card">
       <div class="image">
-        <%= image_tag(item.plant_photos.first.url, height: 160, width: 260, class: 'plant_img') %>
+        <%= image_tag(item.plant_photos.first.url, class: 'plant_img') %>
       </div>
         <div class="text row">
           <div class="card-body pt-2">
             <h2 class="card-title"><%= item.name %></h2>
-            <hr>
+            <%# <hr> %>
             <div class="row">
               <div class="col-6">
                 <p class="card-text"> Light:
