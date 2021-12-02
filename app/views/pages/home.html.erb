@@ -56,13 +56,14 @@
             params[:max_price],
             class: "form-control",
             placeholder: "What is the max $ you are willing to spend?",
-            id: "slider-form-value"
+            id: "slider-form-value",
+            value: "75"
           %>
         </div>
         <div id="slider">
           <label for="price-slider" class="form-label"><strong>What is the max $ you are willing to spend?</strong></label>
-          <input type="range" class="form-range" min="5" max="150" step="5" id="price-slider">
-          <div id="slider-value"></div>
+          <input type="range" class="form-range" min="5" max="150" step="5" id="price-slider" value="75">
+          <div id="slider-value">75</div>
         </div>
 
         <fieldset class="form-group">
