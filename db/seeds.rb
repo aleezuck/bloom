@@ -173,7 +173,7 @@ plant = Plant.create!(
   price: 15,
   care_level: "medium"
 )
-photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637868212/Bloom/Plants/the-sill_white-orchid_variant_x-small_bryant_cream_hw2vlz.jpg")
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638484124/Bloom/Plants/the-sill_white-orchid_variant_x-small_bryant_cream_hw2vlz_sjngfc.jpg")
 photo.plant = plant
 photo.save!
 
@@ -332,7 +332,7 @@ plant = Plant.create!(
   price: 30,
   care_level: "low"
 )
-photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637869191/Bloom/Plants/castironplantamz_bln4yj.jpg")
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638484395/Bloom/Plants/272509-1600x1066-cast-iron-plant_xducix.jpg")
 photo.plant = plant
 photo.save!
 
@@ -358,7 +358,7 @@ plant = Plant.create!(
   price: 15,
   care_level: "low"
 )
-photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637959025/Bloom/Plants/1566417254329_20190821-1566417255317-b9314f1d9f7a4668a466c5ffb1913a8f_xnugzb.jpg")
+photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638484502/Bloom/Plants/1566417254329_20190821-1566417255317-b9314f1d9f7a4668a466c5ffb1913a8f_xnugzb_q7bfxy.jpg")
 photo.plant = plant
 photo.save!
 
