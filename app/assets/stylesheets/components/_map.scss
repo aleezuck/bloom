@@ -23,11 +23,12 @@
 
 .shop-popup {
   width: 130px;
-  height: 140px;
+  height: 145px;
   color: $green;
   border: none !important;
   outline: none;
   h2 {
+    margin-bottom: 0;
     font-size: 11px;
   }
 }
