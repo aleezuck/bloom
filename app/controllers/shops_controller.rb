@@ -80,7 +80,7 @@ class ShopsController < ApplicationController
   end
 
   def piante_plants
-    @url3 = "https://piante.ca/search?type=product%2Carticle&q=philodendron"
+    @url3 = "https://piante.ca/search?type=product%2Carticle&q=#{@plant.name}"
 
     html_file3 = URI.open(@url3).read
     html_doc3 = Nokogiri::HTML(html_file3)
