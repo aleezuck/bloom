@@ -44,6 +44,7 @@
 .texter {
   list-style-type: none;
   padding-top: 20px;
+  padding-right: 100px;
 
   strong {
     font-weight: 500;
@@ -52,6 +53,11 @@
 
 ul {
     list-style-type: none;
+}
+
+.plant-show-grid {
+  display: grid;
+  grid-template-columns: 125px 1fr;
 }
 
 .big_letter {
