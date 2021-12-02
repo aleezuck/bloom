@@ -75,7 +75,7 @@ photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/
 photo2.plant = plant
 photo2.save!
 
-plant = Plant.create!(
+african_violet = Plant.create!(
   name: "African violet",
   description: "The African violet is one of the most popular flowering house plants. These have become easier for the average home grower to produce perfect blooms, although they need to be provided with some special care and attention.",
   category: "flowering",
@@ -90,15 +90,15 @@ plant = Plant.create!(
 )
 
 photo = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1637866744/Bloom/Plants/1521228775791_muczia.jpg")
-photo.plant = plant
+photo.plant = african_violet
 photo.save!
 
 photo1 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638204465/Bloom/Plants/grow-african-violets-indoors-1902733-02-ae7c409a65ba4b949cb33518c37dd90e_z4vj9n.jpg")
-photo1.plant = plant
+photo1.plant = african_violet
 photo1.save!
 
 photo2 = PlantPhoto.new(url: "https://res.cloudinary.com/ds1rugee1/image/upload/v1638203800/Bloom/Plants/african-violets-1626724099_kyw94x.jpg")
-photo2.plant = plant
+photo2.plant = african_violet
 photo2.save!
 
 plant = Plant.create!(
@@ -715,3 +715,62 @@ Shop.create!(
 )
 
 puts "Finished seed! :)"
+
+if Rails.env == "production"
+  puts "Seeding forum..."
+
+  kelse = User.find(22)
+  post1 = Post.new(
+    content: "Hi guys i'm an absolute beginner with plants, how hard is this plant to maintain given no prior experience and would you recommend another plant instead.",
+    upvotes: 6
+  )
+  post1.plant = african_violet
+  post1.user = kelse
+  post1.save!
+
+  steve = User.find(19)
+  post2 = Post.new(
+    content: "Hi guys, ive had this plant for a few weeks now and its not looking great. Im using Kelpy plant booster which worked great on my monster deliciosa and it works great there. anybody know if this would be different for the african violet?",
+    upvotes: 4
+  )
+  post2.plant = african_violet
+  post2.user = steve
+  post2.save!
+
+  michael = User.find(18)
+  post3 = Post.new(
+    content: "Such a cool plants, i've had it for a few months and it looks amazing. Would recommend to anyone.",
+    upvotes: 1
+  )
+  post3.plant = african_violet
+  post3.user = steve
+  post3.save!
+
+  jonster = User.find(23)
+  post_reply1 = PostReply.new(
+    content: "Ive been growing house plants for 10 years now and whilst I would say this plant isn't too hard to take care of, I would still definitely recommend going with an easier plant if its your first time.",
+    upvotes: 5
+  )
+  post_reply1.post = post1
+  post_reply1.user = jonster
+  post_reply1.save!
+
+  post_reply2 = PostReply.new(
+    content: "I think its fine to start with, a bit of a challenge but it can be done",
+    upvotes: 1
+  )
+  post_reply2.post = post1
+  post_reply2.user = michael
+  post_reply2.save!
+
+  chloster = User.find(21)
+  post_reply3 = PostReply.new(
+    content: "In My personal experience, kelpy only works well on large plants, it can be a bit mutch for smaller plants like the african violet. I recommend using a softer fertiliser.",
+    upvotes: 3
+  )
+  post_reply3.post = post2
+  post_reply3.user = chloster
+  post_reply3.save!
+
+  puts "Finished seed! :)"
+end
