@@ -1,9 +1,10 @@
 <div id="home-container-top">
   <h1>BLOOM</h1>
   <h2>Find the perfect plant for your home</h2>
-  <%= link_to "Find my plant", root_path(anchor: "home-form"), class: "btn btn-primary" %>
-  <%= link_to "See all plants", plants_path, class: "btn btn-outline-primary" %>
-
+  <div>
+    <%= link_to "Find my plant", root_path(anchor: "home-form"), class: "btn btn-primary" %>
+    <%= link_to "See all plants", plants_path, class: "btn btn-outline-primary" %>
+  </div>
 </div>
 
 
@@ -46,7 +47,7 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find a specific plant"
+            placeholder: "Are you searching for a specific plant?"
           %>
         </div>
 
@@ -54,12 +55,12 @@
           <%= hidden_field_tag :max_price,
             params[:max_price],
             class: "form-control",
-            placeholder: "Max $ you are willing to spend",
+            placeholder: "What is the max $ you are willing to spend?",
             id: "slider-form-value"
           %>
         </div>
         <div id="slider">
-          <label for="price-slider" class="form-label"><strong>Max $ you are willing to spend</strong></label>
+          <label for="price-slider" class="form-label"><strong>What is the max $ you are willing to spend?</strong></label>
           <input type="range" class="form-range" min="5" max="150" step="5" id="price-slider">
           <div id="slider-value"></div>
         </div>
@@ -82,7 +83,7 @@
 
 
         <fieldset class="form-group">
-          <legend class="col-form-label"><strong>Level of light</strong></legend>
+          <legend class="col-form-label"><strong>How much light will your plant get?</strong></legend>
           <div class="form-check form-check-inline">
             <%= radio_button_tag(:light_level, "low", false, class: "form-check-input") %>
             <%= label_tag(:light_level_low, "Low", class: "form-check-label") %>
@@ -98,7 +99,7 @@
         </fieldset>
 
         <fieldset class="form-group">
-          <legend class="col-form-label"><strong>How much effort are you willing to put in your plant's care?</strong></legend>
+          <legend class="col-form-label"><strong>How much care can you give your plant?</strong></legend>
           <div class="form-check form-check-inline">
             <%= radio_button_tag(:care_level, "low", false, class: "form-check-input") %>
             <%= label_tag(:care_level_low, "Low", class: "form-check-label") %>

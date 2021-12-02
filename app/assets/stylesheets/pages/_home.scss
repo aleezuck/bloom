@@ -14,9 +14,13 @@
 }
 
 #home-container-top {
-  margin-top: 8rem;
-  margin-left: 2rem;
-  min-height: 80vh;
+  // margin-top: 8rem;
+  // margin-left: 2rem;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 200px;
 
   h1 {
     font-size: 72px;

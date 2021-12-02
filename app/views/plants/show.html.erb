@@ -18,7 +18,7 @@
 
     <div class="confirm">
       <%= link_to toggle_wishlist_path(@plant), method: :post do %>
-        <i class="wishlist-heart far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
+        <i title="Add to wishlist" class="wishlist-heart far fa-heart fa-2x<%= " fa-heart-black" unless @wishlist_item.blank? %>"></i>
       <% end %>
     </div>
   </div>
@@ -51,7 +51,7 @@
         <li><p><strong>Price: $</strong><%= @plant.price %></p></li>
         <li><p><strong>Light level:</strong> <%= @plant.light_level %></p></li>
         <li><p><strong>Care level:</strong> <%= @plant.care_level %></p></li>
-        <li><p><strong>Toxic:</strong> <%= @plant.toxic %></p></li>
+        <li><p><strong>Toxic:</strong> <%= @plant.toxic ? "yes" : "no" %></p></li>
       </ul>
 
       <div class="bottom">
