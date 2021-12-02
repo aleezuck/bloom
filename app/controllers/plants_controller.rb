@@ -31,6 +31,8 @@ class PlantsController < ApplicationController
       @plants = @plants.where(toxic: false)
     end
 
+    session[:search_results] = request.url
+
     respond_to do |format|
       format.html
       format.text { render partial: 'plant_list.html', locals: { plants: @plants } }
