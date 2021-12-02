@@ -743,7 +743,7 @@ if Rails.env == "production"
     upvotes: 1
   )
   post3.plant = african_violet
-  post3.user = steve
+  post3.user = michael
   post3.save!
 
   jonster = User.find(23)
