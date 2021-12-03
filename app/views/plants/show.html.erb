@@ -49,13 +49,13 @@
       <ul>
         <li class="plant-show-grid">
           <strong>
-            Price:
+            Price Range:
           </strong>
           <p>
           <% if (1..25).include? @plant.price %>
-            <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign price-lighter"></i> <i class="fas fa-dollar-sign price-lighter"></i>
           <% elsif (26..50).include? @plant.price%>
-            <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
+            <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign price-lighter"></i>
           <% else %>
             <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i> <i class="fas fa-dollar-sign"></i>
           <% end %>
@@ -115,7 +115,7 @@
               placeholder: "Enter location"
             %>
             <%= hidden_field_tag :plant_id, @plant.id %>
-            <%= submit_tag "Shops nearby", class: "btn btn-primary" %>
+            <%= submit_tag "Find shops", class: "btn btn-primary" %>
           <% end %>
         </div>
 
