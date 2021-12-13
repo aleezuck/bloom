@@ -11,6 +11,13 @@
   color: $green;
 }
 
+@media (max-width: 800px) {
+  .navbar-bloom {
+    z-index: 10;
+    background: $white;
+  }
+}
+
 .navbar-bloom .navbar-collapse {
   flex-grow: 0;
 }
