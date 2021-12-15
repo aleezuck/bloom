@@ -1,11 +1,12 @@
 .plant-form {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   align-items: center;
   margin: 2rem 0;
 
   div {
-    margin: 0 5px;
+    gap: 1rem;
   }
 
   .btn {
@@ -26,3 +27,16 @@
     text-align: right;
   }
 }
+
+@media (max-width: 992px) {
+  .plant-form {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .plant-form {
+    flex-direction: column;
+  }
+}
+

@@ -1,6 +1,6 @@
 <div id="home-container-top">
   <h1>BLOOM</h1>
-  <h2>Find the perfect plant for your home</h2>
+  <h2>Find the perfect plant <br>for your home</h2>
   <div>
     <%= link_to "Find my plant", root_path(anchor: "home-form"), class: "btn btn-primary" %>
     <%= link_to "See all plants", plants_path, class: "btn btn-outline-primary" %>
@@ -38,10 +38,8 @@
 <div id="home-form">
   <h2 class="text-center">Find my plant</h2>
 
-  <%= image_tag "home-page-plant2.png", alt: "Plant", id: "home-plant-2", width: 560 %>
-
   <div class="row d-flex justify-content-end mt-5">
-    <div class="col-6">
+    <div class="col-12 col-lg-6">
       <%= form_tag plants_path, id: "home-form-container", method: :get do %>
         <div class="form-group">
           <%= text_field_tag :query,
@@ -121,4 +119,6 @@
       <% end %>
     </div>
   </div>
+
+  <%= image_tag "home-page-plant2.png", alt: "Plant", id: "home-plant-2", width: 560 %>
 </div>

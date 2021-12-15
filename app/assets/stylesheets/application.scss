@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -29,12 +30,23 @@ body {
   flex-grow: 1;
 }
 
-// .container {
-//   width: 100%;
-//   margin-left: 2rem;
-//   margin-right: 2rem;
-//   border: 1px solid pink;
-// }
+@media (min-width: 768px) {
+  .container {
+    max-width: 660px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 870px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1140px;
+  }
+}
 
 h1, h2 {
   font-family: $headers-font;
