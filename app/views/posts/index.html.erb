@@ -19,7 +19,7 @@
 
   <div class="plant-post-grid">
     <div>
-      <%= image_tag(@plant.plant_photos.first.url, width: 400, height: 450) %>
+      <%= image_tag(@plant.plant_photos.first.url, class: 'plant-img') %>
       <%= simple_form_for([@plant, @post], remote: true, html: { class: 'post-form' } ) do |f| %>
         <%= f.input :content, label: false, placeholder: 'Post a comment' %>
         <%= f.submit class: 'btn btn-primary btn-small' %>
